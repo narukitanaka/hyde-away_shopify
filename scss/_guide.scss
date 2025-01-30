@@ -1,0 +1,173 @@
+@use "variable" as v;
+@use "common" as c;
+/*************************************************
+ご利用ガイド
+*************************************************/
+
+.guide-page {
+  .sidebar_inner {
+    padding: 0 0 100px;
+    @media screen and (max-width: 1300px) {
+      padding: 0 0 80px;
+    }
+    @include c.mq(sm) {
+      padding: 0 0 60px;
+    }
+    .link_list {
+      @media screen and (max-width: 1300px) {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        &::after {
+          content: "";
+          display: block;
+          width: 240px;
+          height: 0;
+        }
+      }
+      @include c.mq(sm) {
+        gap: 10px;
+      }
+      li {
+        @media screen and (max-width: 1300px) {
+          max-width: 240px;
+          width: 100%;
+        }
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 1px solid #6c5545;
+          padding: 20px 10px 10px;
+          font-size: 1.4rem;
+          letter-spacing: 0.03em;
+          transition: background-color 0.4s;
+          &::after {
+            content: "";
+            display: block;
+            width: 16px;
+            height: 13px;
+            background: url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/icon_arrow_w_02.svg")
+              no-repeat center / contain;
+          }
+          &:hover {
+            background-color: rgba($color: #6c5545, $alpha: 0.3);
+          }
+        }
+      }
+    }
+  }
+
+  /*************************************************
+ガイド本文
+*************************************************/
+  .sec-guide {
+    padding: 80px 0;
+    scroll-margin-top: 100px;
+    border-bottom: 1px solid #6c5545;
+    @include c.mq(sm) {
+      padding: 40px 0;
+    }
+    &:first-child {
+      padding: 0 0 80px;
+      @include c.mq(sm) {
+        padding: 0 0 40px;
+      }
+    }
+    &:last-child {
+      border: none;
+      margin: 0 0 160px;
+      @include c.mq(sm) {
+        margin: 0 0 80px;
+      }
+    }
+    h2 {
+      font-size: 2.4rem;
+      letter-spacing: 0.03em;
+      margin: 0 0 30px;
+    }
+    .row_group {
+      margin: 0 0 30px;
+      h3 {
+        font-size: 1.8rem;
+        letter-spacing: 0.03em;
+        margin: 0 0 7px;
+      }
+      p {
+        line-height: 2;
+        a {
+          color: #dbcfc5;
+          text-decoration: underline;
+          transition: all 0.3s;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+      .caution_list {
+        margin: 10px 0;
+        li {
+          position: relative;
+          padding: 0 0 0 20px;
+          margin: 5px 0;
+          color: #dbcfc5;
+          font-size: 1.4rem;
+          letter-spacing: 0.03em;
+          &::before {
+            content: "";
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/icon_diamond.svg")
+              no-repeat center / contain;
+            position: absolute;
+            top: 0.75em;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .guide_link {
+    .row_group {
+      p {
+        text-align: center;
+        @include c.mq(sm) {
+          text-align: left;
+        }
+      }
+      .flex_wrap {
+        margin: 40px 0;
+        gap: 30px;
+        justify-content: center;
+        @include c.mq(sm) {
+          flex-direction: column;
+          gap: 15px;
+          margin: 30px 0 0;
+        }
+        .link_btn {
+          a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 202px;
+            height: 50px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            border: 1px solid #dbcfc5;
+            background: url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/btn_deco.svg")
+              no-repeat center / cover;
+            span {
+              font-size: 1.3rem;
+            }
+            img {
+              width: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

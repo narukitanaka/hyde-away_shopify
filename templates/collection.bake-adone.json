@@ -1,0 +1,76 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "image_with_text_bXKH3y": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_X6KtDc": {
+          "type": "heading",
+          "settings": {
+            "heading": "ベイクアドーン",
+            "heading_size": "h2"
+          }
+        },
+        "text_rDRP8w": {
+          "type": "text",
+          "settings": {
+            "text": "<p>ベイクアドーンは有機小麦にこだわった焼き菓子ブランドです。クッキーはパティシエの手によって一本一本繊細な飾り付けが施されています。<\/p><p>それぞれのクッキーが紙に包まれておりあなたやあなたの大切な人がその包み紙を開けるとき有機小麦やバターの豊かな香り、クッキーを彩るナッツや抹茶、チョコレートとともにそこには特別な瞬間が待っています。<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_X6KtDc",
+        "text_rDRP8w"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/BAlogo.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-a6f53b8e-a839-4a5f-b1d8-5d5d97d5ad42",
+        "color_scheme": "scheme-a6f53b8e-a839-4a5f-b1d8-5d5d97d5ad42",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "enable_filtering": false,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "image_with_text_bXKH3y",
+    "product-grid"
+  ]
+}

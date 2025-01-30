@@ -1,0 +1,61 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "disabled": true,
+      "settings": {}
+    },
+    "image_banner_kAzamB": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_3LqdNh": {
+          "type": "heading",
+          "settings": {
+            "heading": "ページが見つかりません",
+            "heading_size": "h1"
+          }
+        },
+        "text_PRVMx7": {
+          "type": "text",
+          "settings": {
+            "text": "恐れ入りますがトップページからお探しください。",
+            "text_style": "body"
+          }
+        },
+        "buttons_YrTUYC": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Top Pageへ",
+            "button_link_1": "\/",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_3LqdNh",
+        "text_PRVMx7",
+        "buttons_YrTUYC"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/HA_3.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_kAzamB"
+  ]
+}

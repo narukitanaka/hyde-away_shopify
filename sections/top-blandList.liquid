@@ -1,0 +1,89 @@
+<!-- BEGIN sections: brand -->
+<section class="sec-brand" id="sec-brand">
+  <div class="m-inner">
+    <h2 class="sec_heading">
+      <span>B</span>rand
+    </h2>
+    
+    <ul class="brand_list">
+
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'top-brandItem' -%}
+          <li class="fadeIn" {{ block.shopify_attributes }}>
+            <a href="{{ block.settings.link_url }}">
+              <div class="image">
+                <picture>
+                  <source media="(min-width: 600px)" srcset="{{ block.settings.image_pc | image_url }}">
+                  <source media="(max-width: 599px)" srcset="{{ block.settings.image_sp | image_url }}">
+                  <img src="{{ block.settings.image_pc | image_url }}" alt="">
+                </picture>
+              </div>
+              <div class="text">
+                <div class="logo">
+                  {%- if block.settings.logo -%}
+                    <img src="{{ block.settings.logo | image_url }}" alt="">
+                  {%- endif -%}
+                </div>
+                <p>
+                  {%- assign description_parts = block.settings.description | split: '[br]' -%}
+                  {%- for part in description_parts -%}
+                    {%- if forloop.index > 1 -%}<br class="u-pc">{%- endif -%}{{ part }}
+                  {%- endfor -%}
+                </p>
+              </div>
+            </a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+
+    </ul>
+  </div>
+</section>
+<!-- END sections: brand -->
+
+
+{% schema %}
+  {
+    "name": "top-blandList",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "top-brandItem",
+        "name": "Brand Item",
+        "settings": [
+          {
+            "type": "url",
+            "id": "link_url",
+            "label": "Link URL"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_pc",
+            "label": "画像_PC"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_sp",
+            "label": "画像_SP"
+          },
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "ロゴ画像"
+          },
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description",
+            "info": "PCでの改行が必要な箇所に[br]を入力してください"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "top-blanList"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,613 @@
+@use "variable" as v;
+
+/*************************************************
+common-style
+*************************************************/
+@mixin base_width {
+  margin: 0 auto;
+  width: 1200px;
+}
+// @extendでスタイルの継承
+// @mixinでステイルの定義
+// @includeでmixinの呼び出し
+
+// ブレイクポイント
+// PC基準でコーディングする場合
+$breakpoints: (
+  "sm": "screen and (max-width: 599px)",
+  //スマホ
+  "md": "screen and (max-width: 1024px)",
+  //タブレット
+) !default;
+@mixin mq($breakpoint: sm) {
+  @media #{map-get($breakpoints , $breakpoint)} {
+    @content;
+  }
+}
+
+// スマホ基準でコーディングする場合
+// $breakpoints: (
+//   "md": "screen and (min-width: 600px)", //タブレット
+//   "lg": "screen and (min-width: 1025px)", //パソコン
+// ) !default;
+// @mixin mq($breakpoint: lg) {
+//   @media #{map-get($breakpoints , $breakpoint)} {
+//     @content;
+//   }
+// }
+
+* {
+  box-sizing: border-box;
+}
+
+.ie_ObjectFit {
+  object-fit: cover;
+  font-family: "object-fit: cover;";
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  // scroll-behavior: smooth;
+  // font-family: YakuHanJP, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  font-family: YakuHanMP, "Libre Baskerville", "Zen Old Mincho",
+    "Hiragino Mincho ProN", "Noto Serif JP", "Yu Mincho", YuMincho, serif;
+  // font-family: YakuHanRP, "M PLUS Rounded 1c", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  min-height: 100dvh;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.75;
+  background: v.$brown;
+  img {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+  }
+  .bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    background: #3c210e
+      url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_brown.png")
+      repeat left top / cover;
+  }
+}
+
+// メニューを開いたときの指定
+body.active {
+  height: 100%;
+  overflow: hidden;
+}
+
+.wrapper {
+  // overflow: hidden;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+// /iOSでのデフォルトスタイルをリセット /
+input[type="submit"],
+input[type="button"] {
+  border-radius: 0;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  appearance: button;
+  border: none;
+  box-sizing: border-box;
+  &::-webkit-search-decoration {
+    display: none;
+  }
+  &:focus {
+    outline-offset: -2px;
+  }
+}
+
+/*************************************************
+コンテンツ幅等
+*************************************************/
+
+.l-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  @media screen and (max-width: 1300px) {
+    padding: 0 v.pxtovw(80);
+  }
+  @include mq(sm) {
+    padding: 0 v.pxtovw_sp(24);
+  }
+}
+
+.m-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  @media screen and (max-width: 1100px) {
+    padding: 0 v.pxtovw(80);
+  }
+  @include mq(sm) {
+    padding: 0 v.pxtovw_sp(24);
+  }
+}
+
+.s-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  @media screen and (max-width: 900px) {
+    padding: 0 v.pxtovw(80);
+  }
+  @include mq(sm) {
+    padding: 0 v.pxtovw_sp(24);
+  }
+}
+
+.flex_wrap {
+  display: flex;
+}
+
+/*************************************************
+セクションの見出し
+*************************************************/
+
+.sec_heading {
+  font-size: 3.6rem;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  span {
+    font-size: 4.8rem;
+  }
+}
+
+/*************************************************
+リンク
+*************************************************/
+
+.more_btn {
+  text-align: center;
+  a {
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 6px;
+      background: url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/deco_underline_w.svg")
+        no-repeat center / contain;
+      margin: 5px 0 0;
+    }
+    span {
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      &::after {
+        content: "";
+        display: block;
+        width: 0.8em;
+        height: 1em;
+        background: url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/icon_arrow_b.svg")
+          no-repeat center / contain;
+      }
+    }
+  }
+}
+
+/*************************************************
+ページヘッダー
+*************************************************/
+
+.page-header {
+  margin: 160px 0 120px;
+  @include mq(sm) {
+    margin: 100px 0 60px;
+  }
+  .page-heading {
+    text-align: center;
+    span {
+      display: block;
+    }
+    .en {
+      font-size: 4rem;
+      letter-spacing: 0.03em;
+      @include mq(sm) {
+        font-size: 3.2rem;
+      }
+    }
+    .ja {
+      font-size: 1.6rem;
+      letter-spacing: 0.03em;
+      margin: 10px 0 0;
+      @include mq(sm) {
+        font-size: 1.4rem;
+        margin: 5px 0 0;
+      }
+    }
+  }
+}
+
+/*************************************************
+ページネーション
+*************************************************/
+
+.pagination_wrapper {
+  @include mq(sm) {
+    font-size: 1.4rem;
+  }
+  .pagination {
+    .pagination__list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 28px;
+      .pagination__item {
+        &.pagination__item--current {
+          text-decoration-line: underline;
+          text-decoration-style: solid;
+          text-decoration-skip-ink: auto;
+          text-decoration-thickness: 8%; /* 1.28px */
+          text-underline-offset: 53%; /* 8.48px */
+          text-underline-position: from-font;
+        }
+        &.pagination__item-arrow {
+          img {
+            width: 54px;
+            @include mq(sm) {
+              width: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*************************************************
+ブランドカード
+*************************************************/
+
+.sec-brand_link {
+  margin: 100px auto 130px;
+  @include mq(sm) {
+    margin: 80px auto;
+  }
+  .brand_link-heading {
+    margin: 0 0 60px;
+    text-align: center;
+    @include mq(sm) {
+      margin: 0 0 30px;
+    }
+    span {
+      display: block;
+    }
+    .en {
+      font-size: 4rem;
+      letter-spacing: 0.03em;
+      @include mq(sm) {
+        font-size: 3.2rem;
+      }
+    }
+    .ja {
+      letter-spacing: 0.03em;
+    }
+  }
+  .brand_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 19px;
+    @include mq(sm) {
+      flex-direction: column;
+      gap: 20px;
+    }
+    li {
+      width: 32.25%;
+      @include mq(sm) {
+        width: 100%;
+      }
+      .image {
+        overflow: hidden;
+        img {
+          transition: transform 0.6s ease;
+        }
+      }
+      &:hover {
+        .image {
+          img {
+            transform: scale(1.05);
+          }
+        }
+      }
+      .text {
+        background: v.$beige;
+        height: 176px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        color: v.$brown;
+        @include mq(sm) {
+          height: auto;
+          padding: 20px 0;
+        }
+        .logo {
+          width: 127px;
+          height: 73px;
+          @include mq(sm) {
+            width: 114px;
+            height: 65px;
+          }
+        }
+        p {
+          font-size: 1.4rem;
+          line-height: 1.7;
+          letter-spacing: 0.03em;
+          @include mq(sm) {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*************************************************
+商品一覧
+*************************************************/
+
+.sec-product {
+  .contents_wrapper {
+    margin: 160px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 80px 0;
+    @include mq(sm) {
+      margin: 60px 0 0;
+      gap: 60px 10px;
+    }
+    .item {
+      width: 32.25%;
+      @include mq(sm) {
+        width: calc(50% - 5px);
+      }
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 32.25%;
+      height: 0;
+      @include mq(sm) {
+        width: calc(50% - 5px);
+      }
+    }
+  }
+  .item {
+    display: flex;
+    flex-direction: column;
+    .product_link {
+      flex-grow: 1;
+      &:hover {
+        .image {
+          img {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+    .image {
+      overflow: hidden;
+      img {
+        width: 100%;
+        transition: transform 0.6s ease;
+      }
+    }
+    .caption {
+      margin: 10px 0 0;
+      .brand {
+        display: block;
+        font-size: 1.2rem;
+        line-height: 1.7;
+        letter-spacing: 0.03em;
+        margin: 0 0 5px;
+        @include mq(sm) {
+          font-size: 1.1rem;
+        }
+      }
+      .product_name {
+        display: block;
+        line-height: 1.7;
+        margin: 0 0 20px;
+        @include mq(sm) {
+          font-size: 1.4rem;
+          margin: 0 0 10px;
+        }
+      }
+      .price {
+        display: block;
+        margin: 0 0 40px;
+        @include mq(sm) {
+          margin: 0 0 20px;
+        }
+        .num {
+          font-size: 1.8rem;
+          line-height: 1.7;
+          letter-spacing: 0.03em;
+          @include mq(sm) {
+            font-size: 1.6rem;
+          }
+        }
+        .tax {
+          display: inline-block;
+          font-size: 1.2rem;
+          line-height: 1.7;
+          letter-spacing: 0.03em;
+          margin: 0 0 0 2px;
+        }
+      }
+    }
+  }
+}
+
+.cart_btn {
+  button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 202px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border: 1px solid #dbcfc5;
+    background: url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/btn_deco.svg")
+      no-repeat center / cover;
+    @include mq(sm) {
+      width: 100%;
+    }
+    span {
+      font-size: 1.4rem;
+      @include mq(sm) {
+        font-size: 1.2rem;
+      }
+    }
+    img {
+      width: 10px;
+    }
+  }
+}
+
+.pagination_wrapper {
+  margin: 100px auto 180px;
+  @include mq(sm) {
+    margin: 60px auto 100px;
+  }
+}
+
+/*************************************************
+パンくずリスト
+*************************************************/
+
+.breadcrumbs {
+  padding: 25px 8.33vw;
+  background: #3c210e
+    url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_brown.png")
+    repeat left top / cover;
+  position: relative;
+  @include mq(sm) {
+    padding: 18px v.pxtovw_sp(24);
+  }
+  &::before {
+    content: "";
+    display: block;
+    width: calc(100% - (8.33vw * 2));
+    height: 1px;
+    background: rgba(108, 85, 69, 0.5);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    @include mq(sm) {
+      width: calc(100% - (v.pxtovw_sp(24) * 2));
+    }
+  }
+  ol {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    li {
+      font-size: 1.2rem;
+      position: relative;
+      @include mq(sm) {
+        font-size: 1.1rem;
+      }
+      &:first-child {
+        text-transform: uppercase;
+      }
+      &::after {
+        content: "";
+        display: block;
+        width: 14px;
+        height: 14px;
+        background: url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/icon_arrow_w_02.svg")
+          no-repeat center / contain;
+        position: absolute;
+        top: 50%;
+        right: -18px;
+        transform: translate(0, -50%) rotate(-90deg);
+      }
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+      a {
+        text-decoration: underline;
+        transition: all 0.3s;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+
+/*************************************************
+2カラムのページ（サイドバー固定）
+*************************************************/
+
+.column-wrapper {
+  display: flex;
+  justify-content: space-between;
+  @media screen and (max-width: 1300px) {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 240px;
+    @media screen and (max-width: 1300px) {
+      // display: none;
+      max-width: 900px;
+      width: 100%;
+    }
+    .sidebar_inner {
+      position: sticky;
+      top: 160px;
+      @media screen and (max-width: 1300px) {
+        position: initial;
+      }
+    }
+  }
+  .contents_wrapper {
+    max-width: 900px;
+    @include mq(md) {
+      width: 100%;
+    }
+  }
+}
+
+/*************************************************
+フェードアニメーション
+*************************************************/
+
+.fadeIn {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fadeIn.active {
+  opacity: 1;
+  transform: translateY(0);
+}

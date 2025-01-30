@@ -1,0 +1,207 @@
+@use "variable" as v;
+@use "common" as c;
+/*************************************************
+店舗一覧
+*************************************************/
+
+.shop-page {
+  .sidebar_inner {
+    padding: 0 0 100px;
+    @media screen and (max-width: 1300px) {
+      padding: 0 0 80px;
+    }
+    @include c.mq(sm) {
+      padding: 0 0 40px;
+    }
+    .link_list {
+      @media screen and (max-width: 1300px) {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        &::after {
+          content: "";
+          display: block;
+          width: 240px;
+          height: 0;
+        }
+      }
+      @include c.mq(sm) {
+        gap: 10px;
+      }
+      li {
+        @media screen and (max-width: 1300px) {
+          max-width: 240px;
+          width: 100%;
+        }
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 1px solid #6c5545;
+          padding: 20px 10px 10px;
+          font-size: 1.4rem;
+          letter-spacing: 0.03em;
+          transition: background-color 0.4s;
+          &::after {
+            content: "";
+            display: block;
+            width: 16px;
+            height: 13px;
+            background: url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/icon_arrow_w_02.svg")
+              no-repeat center / contain;
+          }
+          &:hover {
+            background-color: rgba($color: #6c5545, $alpha: 0.3);
+          }
+        }
+      }
+    }
+  }
+
+  /*************************************************
+店舗詳細
+*************************************************/
+  .sec-shop {
+    padding: 100px 0;
+    scroll-margin-top: 100px;
+    border-bottom: 1px solid #6c5545;
+    @include c.mq(sm) {
+      padding: 80px 0;
+      scroll-margin-top: 60px;
+    }
+    &:first-child {
+      padding: 0 0 100px;
+      @include c.mq(sm) {
+        padding: 0 0 80px;
+      }
+    }
+    &:last-child {
+      border: none;
+      margin: 0 0 60px;
+      @include c.mq(sm) {
+        margin: 0;
+      }
+    }
+    .shop_name {
+      font-size: 2.8rem;
+      letter-spacing: 0.03em;
+      text-align: center;
+      margin: 0 0 30px;
+      @include c.mq(sm) {
+        font-size: 2rem;
+        margin: 0 0 10px;
+      }
+    }
+    .shop_info_wrap {
+      margin: 60px 0 0;
+      @include c.mq(md) {
+        margin: 30px 0 0;
+      }
+      .flex_wrap {
+        justify-content: space-between;
+        @include c.mq(md) {
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+      .info {
+        min-width: 460px;
+        @include c.mq(sm) {
+          min-width: 0;
+          width: 100%;
+        }
+        dl {
+          .row_group {
+            margin: 0 0 10px;
+            display: flex;
+            dt {
+              width: 20%;
+              font-size: 1.4rem;
+              font-weight: 400;
+              @include c.mq(sm) {
+                font-size: 1.1rem;
+              }
+            }
+            dd {
+              width: 80%;
+              @include c.mq(sm) {
+                font-size: 1.2rem;
+              }
+              .map_btn {
+                display: inline-block;
+                margin: 3px 0;
+                @include c.mq(sm) {
+                  width: 70px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .map {
+        min-width: 395px;
+        @include c.mq(sm) {
+          min-width: 0;
+          width: 100%;
+        }
+        iframe {
+          aspect-ratio: 395 / 300;
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  ///////////////////////////////////
+  // パーツ：画像スライダー（サムネイル付き）
+  ///////////////////////////////////
+  .slide_image_wrap {
+    .img_slider {
+      margin: 0 0 20px;
+      @include c.mq(sm) {
+        margin: 0 0 10px;
+      }
+      .swiper-slide {
+        .item {
+          width: 100%;
+          margin: 0 auto;
+          img {
+            aspect-ratio: 450 / 253;
+            width: 100%;
+            height: auto;
+            min-width: 0;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+    .thumb_slider {
+      width: 100%;
+      height: 100px;
+      @include c.mq(sm) {
+        height: 60px;
+      }
+      .swiper-slide {
+        cursor: pointer;
+        .item {
+          opacity: 0.5;
+          img {
+            aspect-ratio: 1 / 1;
+            width: 100%;
+            height: auto;
+            min-width: 0;
+            object-fit: cover;
+          }
+        }
+        &.swiper-slide-thumb-active {
+          .item {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

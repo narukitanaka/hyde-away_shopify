@@ -1,0 +1,69 @@
+<!-- BEGIN sections: brand_link -->
+<section class="sec-brand_link">
+  <div class="l-inner">
+    <h2 class="brand_link-heading">
+      <span class="en">Other Brands</span>
+    </h2>
+    <ul class="brand_list">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'other-brand' -%}
+          <li {{ block.shopify_attributes }}>
+            <a href="{{ block.settings.link_url }}">
+              <div class="image">
+                {%- if block.settings.brand_image -%}
+                  <img src="{{ block.settings.brand_image | image_url }}" alt="">
+                {%- endif -%}
+              </div>
+              <div class="text">
+                <div class="logo">
+                  {%- if block.settings.brand_logo -%}
+                    <img src="{{ block.settings.brand_logo | image_url }}" alt="">
+                  {%- endif -%}
+                </div>
+                <p>
+                  {{ block.settings.description }}
+                </p>
+              </div>
+            </a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+<!-- END sections: brand_link -->
+
+{% schema %}
+{
+  "name": "Other Brands",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "other-brand",
+      "name": "ブランド",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "リンクURL"
+        },
+        {
+          "type": "image_picker",
+          "id": "brand_image",
+          "label": "ブランド画像"
+        },
+        {
+          "type": "image_picker",
+          "id": "brand_logo",
+          "label": "ブランドロゴ"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "説明文"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

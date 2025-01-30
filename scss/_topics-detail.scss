@@ -1,0 +1,176 @@
+@use "variable" as v;
+@use "common" as c;
+/*************************************************
+トピックス詳細ページ
+*************************************************/
+
+.topics-detail-page {
+  article {
+    max-width: 1000px;
+    margin: 160px auto;
+    @media screen and (max-width: 1100px) {
+      padding: 0 v.pxtovw(80);
+    }
+    @include c.mq(sm) {
+      margin: 100px 0;
+      padding: 0 v.pxtovw_sp(24);
+    }
+  }
+
+  .title_wrap {
+    border-bottom: 1px solid #6c5545;
+    padding: 0 20px 27px;
+    margin: 0 0 60px;
+    @include c.mq(sm) {
+      padding: 0 10px 20px;
+      margin: 0 0 30px;
+    }
+    .date {
+      color: #dbcfc5;
+      font-size: 1.2rem;
+      letter-spacing: 0.03em;
+    }
+    .topics_title {
+      font-size: 2rem;
+      line-height: 1.7;
+      letter-spacing: 0.03em;
+    }
+  }
+  .contents_wrap {
+    padding: 0 20px;
+    line-height: 2;
+    letter-spacing: 0.03em;
+    @include c.mq(sm) {
+      padding: 0;
+      font-size: 1.4rem;
+    }
+    // 以下、本文中のパーツ別スタイル
+    // 画像
+    img {
+      max-width: 960px;
+      width: 100%;
+    }
+    // 段落
+    p {
+      margin: 20px 0;
+      @include c.mq(sm) {
+        margin: 1em 0;
+      }
+    }
+    // 見出し
+    h1,
+    h2,
+    h3,
+    h4 {
+      letter-spacing: 0.03em;
+      margin: 20px 0;
+    }
+    h1 {
+      font-size: 3.2rem;
+      @include c.mq(sm) {
+        font-size: 2.8rem;
+      }
+    }
+    h2 {
+      font-size: 2.8rem;
+      @include c.mq(sm) {
+        font-size: 2.4rem;
+      }
+    }
+    h3 {
+      font-size: 2.4rem;
+      @include c.mq(sm) {
+        font-size: 2rem;
+      }
+    }
+    h4 {
+      font-size: 2rem;
+      @include c.mq(sm) {
+        font-size: 1.8rem;
+      }
+    }
+    // リンク
+    a {
+      color: #dbcfc5;
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+      text-decoration-skip-ink: auto;
+      text-decoration-thickness: 6.5%; /* 1.04px */
+      text-underline-offset: 22.5%; /* 3.6px */
+      text-underline-position: from-font;
+      transition: all 0.3s;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    // リスト
+    ul {
+      margin: 10px 0;
+      li {
+        position: relative;
+        padding: 0 0 0 20px;
+        margin: 5px 0;
+        &::before {
+          content: "";
+          display: block;
+          width: 8px;
+          height: 8px;
+          background: url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/icon_diamond.svg")
+            no-repeat center / contain;
+          position: absolute;
+          top: 0.75em;
+          left: 0;
+        }
+      }
+    }
+    ol {
+      margin: 10px 0;
+      list-style: decimal;
+      padding: 0 0 0 20px;
+      li {
+        margin: 5px 0;
+      }
+    }
+    // 表
+    table {
+      margin: 10px 0;
+      @include c.mq(sm) {
+        width: 100%;
+      }
+      tbody {
+        td {
+          border: 1px solid #6c5545;
+          padding: 5px 20px;
+          p {
+            margin: 10px 0;
+          }
+        }
+      }
+    }
+  }
+
+  .article_footer {
+    margin: 100px 0 200px;
+    padding: 60px 0 0;
+    border-top: 1px solid #6c5545;
+    @include c.mq(sm) {
+      margin: 60px 0 100px;
+    }
+    .more_btn {
+      span {
+        &::before {
+          content: "";
+          display: block;
+          width: 0.8em;
+          height: 1em;
+          background: url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/icon_arrow_w.svg")
+            no-repeat center / contain;
+          transform: rotate(180deg);
+        }
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}

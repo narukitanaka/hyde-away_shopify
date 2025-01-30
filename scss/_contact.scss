@@ -1,0 +1,150 @@
+@use "variable"as v;
+@use "common"as c;
+/*************************************************
+お問い合わせページ
+*************************************************/
+
+.contact-page {
+
+.sec-contact {
+    .contents_wrapper {
+        .form_text {
+            margin: 80px 0 50px;
+            text-align: center;
+            line-height: 2;
+            @include c.mq(sm) {
+                margin: 40px 0 30px;
+                font-size: 1.4rem;
+                text-align: left;
+            }
+            a {
+                color: #DBCFC5;
+                text-decoration-line: underline;
+                text-decoration-style: solid;
+                text-decoration-skip-ink: auto;
+                text-decoration-thickness: 6.5%;
+                text-underline-offset: 22.5%;
+                text-underline-position: from-font;
+                transition: all .3s;
+                &:hover {
+                    opacity: .7;
+                }
+            }
+        }
+        #ContactForm {
+            max-width: 800px;
+            margin: 0 auto 200px;
+            @include c.mq(sm) {
+                margin: 0 auto 80px;
+            }
+            .field {
+                margin: 0 0 50px;
+                @include c.mq(sm) {
+                    margin: 0 0 20px;
+                }
+                .field__label {
+                    display: block;
+                    margin: 0 0 10px;
+                    font-size: 1.4rem;
+                    line-height: 2;
+                    letter-spacing: .03em;
+                }
+                .required {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    &::after {
+                        content: "必須";
+                        display: inline-block;
+                        padding: 1px 8px;
+                        background-color: #DBCFC5;
+                        color: v.$brown;
+                        font-size: 1.2rem;
+                    }
+                }
+                .field__input {
+                    display: block;
+                    border-radius: 2px;
+                    box-shadow: 0 0 0 1px #DBCFC5 inset;
+                    width: 100%;
+                    padding: 13px 20px;
+                    &:focus {
+                        box-shadow: 0 0 0 3px #DBCFC5 inset;
+                    }
+                }
+                .field__select {
+                    position: relative;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        right: 30px;
+                        width: 8px;
+                        height: 8px;
+                        border-top: 1px solid #DBCFC5;
+                        border-right: 1px solid #DBCFC5;
+                        transform: rotate(135deg);
+                        pointer-events: none;
+                    }
+                    select {
+                        display: block;
+                        border-radius: 2px;
+                        box-shadow: 0 0 0 1px #DBCFC5 inset;
+                        width: 100%;
+                        padding: 13px 20px;
+                        &::-ms-expand {
+                            display: none;
+                        }
+                        &:focus {
+                            box-shadow: 0 0 0 2px #DBCFC5 inset;
+                        }
+                    }
+                }
+                p {
+                    text-align: center;
+                    @include c.mq(sm) {
+                        text-align: left;
+                        font-size: 1.4rem;
+                    }
+                    a {
+                        color: #DBCFC5;
+                        text-decoration: underline;
+                        transition: all .3s;
+                        &:hover {
+                            opacity: .7;
+                        }
+                    }
+                }
+            }
+            .contact__button {
+                .button {
+                    display: block;
+                    margin: 0 auto;
+                    width: 57%;
+                    padding: 10px;
+                    border-radius: 9999px;
+                    background-color: #fff;
+                    color: v.$brown;
+                    font-size: 2.0rem;
+                    letter-spacing: .03em;
+                    text-align: center;
+                    transition: all .3s;
+                    @include c.mq(sm) {
+                        width: 280px;
+                        font-size: 1.8rem;
+                    }
+                    &:hover {
+                        transform: translate(0, 3px);
+                    }
+                    &:focus {
+                        box-shadow: 0 0 0 4px #013F89 inset;
+                    }
+                }
+            }
+        }
+    }
+}
+
+}

@@ -1,0 +1,217 @@
+@use "variable" as v;
+@use "common" as c;
+/*************************************************
+Hyde&Awayブランドページ
+*************************************************/
+
+.ha-page {
+  /*************************************************
+KV
+*************************************************/
+
+  .sec-kv {
+    padding: 200px 1.67vw;
+    @include c.mq(md) {
+      padding: 114px v.pxtovw_sp(24) 60px;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 83px;
+      @include c.mq(md) {
+        flex-direction: column;
+        gap: 40px;
+      }
+      .image {
+        img {
+          width: 100%;
+          max-width: 660px;
+        }
+      }
+      .text {
+        .logo {
+          width: 181px;
+          margin: 0 auto;
+          @include c.mq(sm) {
+            width: 130px;
+          }
+          img {
+            width: 100%;
+          }
+        }
+        .heading {
+          font-size: 2.4rem;
+          margin: 20px 0;
+          @include c.mq(sm) {
+            text-align: center;
+            margin: 10px 0;
+          }
+        }
+        .box {
+          margin: 55px 0 0;
+          font-size: 1.8rem;
+          text-align: center;
+          @include c.mq(sm) {
+            margin: 30px 0 0;
+          }
+          &::before,
+          &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 6px;
+            background: url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/ha_deco_line.svg")
+              no-repeat center / contain;
+            margin: 12px 0;
+          }
+        }
+        .caution {
+          max-width: 315px;
+          font-size: 1.3rem;
+          line-height: 2;
+        }
+      }
+    }
+  }
+
+  /*************************************************
+concept
+*************************************************/
+
+  .sec-concept {
+    background: v.$beige
+      url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_noise.png")
+      repeat center / 50px;
+    padding: 130px 0;
+    color: v.$brown;
+    @include c.mq(sm) {
+      padding: 60px 0 100px;
+    }
+    .flex_wrap {
+      gap: 40px;
+      align-items: flex-end;
+      @include c.mq(md) {
+        flex-direction: column;
+      }
+      // @include c.mq(sm) {
+      //     align-items: flex-start;
+      // }
+    }
+    .image {
+      width: 63.4vw;
+      margin-right: calc(50% - 50vw);
+      @include c.mq(md) {
+        width: 100%;
+      }
+    }
+    .text {
+      max-width: 360px;
+      @include c.mq(sm) {
+        max-width: 600px;
+        width: 100%;
+      }
+      h2 {
+        margin: 0 0 34px;
+        @include c.mq(sm) {
+          text-align: center;
+          margin: 0 0 30px;
+        }
+      }
+      p {
+        font-size: 1.4rem;
+        margin: 0 0 20px;
+        line-height: 2;
+        @include c.mq(sm) {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+
+  /*************************************************
+slider
+*************************************************/
+
+  .swiper {
+    .swiper-wrapper {
+      transition-timing-function: linear;
+      .swiper-slide {
+        img {
+          height: auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  /*************************************************
+commitment
+*************************************************/
+
+  .sec-commitment {
+    position: relative;
+    padding: 150px 0 80px;
+    @include c.mq(sm) {
+      padding: 80px 0 0;
+    }
+    .sec-heading {
+      display: inline-block;
+      position: sticky;
+      top: 200px;
+      left: 8.33vw;
+      z-index: -1;
+      font-size: 9.6rem;
+      opacity: 0.2;
+      filter: blur(2px);
+      @include c.mq(sm) {
+        top: 62px;
+        left: 0;
+        font-size: 4.8rem;
+      }
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 0 70px;
+      @include c.mq(md) {
+        flex-direction: column;
+        gap: 30px;
+      }
+      &.reverse {
+        flex-direction: row-reverse;
+        @include c.mq(md) {
+          flex-direction: column;
+        }
+      }
+      .text {
+        max-width: 476px;
+        h3 {
+          span {
+            display: block;
+          }
+          .sub {
+            font-size: 1.4rem;
+            font-style: italic;
+            @include c.mq(sm) {
+              font-size: 1.2rem;
+            }
+          }
+          .content-heading {
+            font-size: 3.2rem;
+            @include c.mq(sm) {
+              font-size: 2.4rem;
+            }
+          }
+        }
+      }
+      .image {
+        width: 34.72vw;
+        @include c.mq(sm) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

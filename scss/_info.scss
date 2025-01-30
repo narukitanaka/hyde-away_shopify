@@ -1,0 +1,273 @@
+@use "variable"as v;
+@use "common"as c;
+/*************************************************
+情報系ページ
+・プライバシーポリシー
+・特定商取引法に基づく表記
+・会社概要
+・よくあるご質問
+トピックス一覧ページ（最新情報）
+*************************************************/
+
+.info-page {
+
+.sec-info {
+    margin: 0 0 100px;
+    .contents_wrapper {
+        .row_group {
+            padding: 40px 0;
+            border-bottom: 1px solid #6C5545;
+            @include c.mq(sm) {
+                padding: 20px 0;
+            }
+            h2 {
+                font-size: 2.4rem;
+                line-height: 1.792;
+                letter-spacing: .03em;
+                margin: 0 0 15px;
+                @include c.mq(sm) {
+                    font-size: 2.0rem;
+                }
+            }
+            p {
+                line-height: 1.75;
+                letter-spacing: .03em;
+                margin: 0 0 1em;
+                @include c.mq(sm) {
+                    font-size: 1.4rem;
+                }
+            }
+            ol {
+                list-style: decimal;
+                margin: 0 0 0 1.2em;
+                @include c.mq(sm) {
+                    font-size: 1.4rem;
+                }
+                li {
+                    line-height: 1.75;
+                    letter-spacing: .03em;
+                }
+            }
+        }
+        dl {
+            .row_group {
+                padding: 20px 0;
+                display: flex;
+                @include c.mq(sm) {
+                    flex-direction: column;
+                    gap: 10px;
+                }
+                dt {
+                    width: 200px;
+                    padding: 0 26px;
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                    line-height: 1.75;
+                    letter-spacing: .03em;
+                    @include c.mq(sm) {
+                        width: 100%;
+                        padding: 0 10px;
+                    }
+                }
+                dd {
+                    width: calc(100% - 200px);
+                    line-height: 1.75;
+                    letter-spacing: .03em;
+                    padding: 0 26px 0 0;
+                    @include c.mq(sm) {
+                        width: 100%;
+                        padding: 0 10px;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+        .topics_group {
+            padding: 0;
+            &:first-of-type {
+                border-top: 1px solid #6C5545;
+            }
+            a {
+                display: block;
+                padding: 27px 20px;
+                transition: background-color .4s;
+                @include c.mq(sm) {
+                    padding: 20px 0;
+                }
+                &:hover {
+                    background-color: rgba($color: #6C5545, $alpha: .3);
+                }
+                .flex_wrap {
+                    gap: 34px;
+                    align-items: center;
+                    justify-content: center;
+                    @include c.mq(sm) {
+                        gap: 24px;
+                    }
+                    .text {
+                        width: calc(100% - (34px + 63px));
+                        line-height: 1.7;
+                        @include c.mq(sm) {
+                            width: calc(100% - (24px + 34px));
+                        }
+                        .date {
+                            color: #DBCFC5;
+                            font-size: 1.2rem;
+                            letter-spacing: .03em;
+                        }
+                        .title {
+                            line-height: 1.7;
+                            letter-spacing: .03em;
+                            @include c.mq(sm) {
+                                font-size: 1.3rem;
+                            }
+                        }
+                    }
+                    .icon {
+                        img {
+                            width: 63px;
+                            @include c.mq(sm) {
+                                width: 34px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sec-faq {
+    .faq_list {
+        width: 100%;
+        margin: 0 0 100px;
+        @include c.mq(sm) {
+            margin: 0 0 60px;
+        }
+        .category {
+            font-size: 1.8rem;
+            letter-spacing: .03em;
+            padding: 20px 0;
+            border-bottom: 1px solid #6C5545;
+            @include c.mq(sm) {
+                font-size: 1.6rem;
+                padding: 12px 0;
+            }
+        }
+        .faq_item {
+            border-bottom: 1px solid #6C5545;
+            summary {
+                display: block;
+                cursor: pointer;
+                &::-webkit-details-marker {
+                    display: none;
+                }
+                .summary_inner {
+                    padding: 20px 10px;
+                    display: flex;
+                    align-items: center;
+                    @include c.mq(sm) {
+                        padding: 16px 10px;
+                        gap: 10px;
+                    }
+                    .q_text {
+                        line-height: 1.7;
+                        @include c.mq(sm) {
+                            font-size: 1.4rem;
+                        }
+                    }
+                    .faq_icon {
+                        display: inline-block;
+                        width: 18px;
+                        height: 18px;
+                        margin: 0 28px 0 auto;
+                        position: relative;
+                        @include c.mq(sm) {
+                            // width: 14px;
+                            // height: 14px;
+                            margin: 0 10px 0 auto;
+                        }
+                        &::before, &::after {
+                            content: "";
+                            display: block;
+                            background: #fff;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                        &::before {
+                            width: 18px;
+                            height: 1px;
+                        }
+                        &::after {
+                            width: 1px;
+                            height: 18px;
+                            transition: transform .5s;
+                            animation: 0.4s close-animation;
+                        }
+                    }
+                }
+            }
+            &.is-opened {
+                summary {
+                    .summary_inner {
+                        .faq_icon {
+                            &::after {
+                                animation: 0.4s open-animation forwards;
+                            }
+                        }
+                    }
+                }
+            }
+            .content {
+                overflow: hidden;
+                .content_inner {
+                    padding: 20px 10px;
+                    @include c.mq(sm) {
+                        padding: 16px 10px;
+                    }
+                    .a_text {
+                        line-height: 1.7;
+                        @include c.mq(sm) {
+                            font-size: 1.4rem;
+                        }
+                        p {
+                            margin: 0 0 20px;
+                        }
+                        a {
+                            color: #DBCFC5;
+                            text-decoration: underline;
+                            transition: all .3s;
+                            &:hover {
+                                opacity: .7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes close-animation {
+    from {
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+@keyframes open-animation {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to{
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+}
+
+}

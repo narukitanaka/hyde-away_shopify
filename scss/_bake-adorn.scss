@@ -1,0 +1,417 @@
+@use "variable" as v;
+@use "common" as c;
+/*************************************************
+BAKE ADORNブランドページ
+*************************************************/
+
+.ba-page {
+  background: #f8f2e6
+    url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_shimi.png")
+    repeat center / contain;
+
+  /*************************************************
+KV
+*************************************************/
+
+  // .sec-kv {
+  //     padding: 81px 0 0;
+  //     @include c.mq(md) {
+  //         padding: 64px 0 0;
+  //     }
+  //     .container {
+  //         position: relative;
+  //         .image {
+  //             img {
+  //                 width: 100%;
+  //             }
+  //         }
+  //         .text {
+  //             position: absolute;
+  //             right: 7.22vw;
+  //             bottom: 47px;
+  //             @include c.mq(sm) {
+  //                 right: v.pxtovw_sp(24);
+  //                 top: 52px;
+  //                 bottom: auto;
+  //             }
+  //             .brand_name {
+  //                 font-size: 4.8rem;
+  //                 letter-spacing: .02em;
+  //                 text-transform: uppercase;
+  //                 @include c.mq(sm) {
+  //                     font-size: 3.2rem;
+  //                 }
+  //             }
+  //             .copy {
+  //                 font-size: 3.6rem;
+  //                 letter-spacing: .02em;
+  //                 line-height: 1.2;
+  //                 font-style: italic;
+  //                 text-align: right;
+  //                 color: #BD8854;
+  //                 margin: 10px 0;
+  //                 @include c.mq(sm) {
+  //                     font-size: 1.4rem;
+  //                 }
+  //             }
+  //         }
+  //     }
+  // }
+
+  .sec-kv {
+    padding: 81px 0 0;
+    width: 100%;
+    height: min(100vh, 800px);
+    @include c.mq(md) {
+      height: auto;
+      padding: 64px 0 0;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      @include c.mq(md) {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 30px;
+      }
+    }
+    .text {
+      width: 45%;
+      background: url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_shimi.png")
+        no-repeat center / cover;
+      @include c.mq(md) {
+        width: 60%;
+        margin: 0 0 40px;
+      }
+      @include c.mq(sm) {
+        width: 100%;
+      }
+      .flex_wrap {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .brand_logo {
+        width: 240px;
+        @include c.mq(sm) {
+          width: 180px;
+        }
+        img {
+          width: 100%;
+        }
+      }
+      .copy {
+        margin: 10px 0 0;
+        color: #bd8854;
+        font-size: 1.4rem;
+        font-style: italic;
+        text-align: center;
+        @include c.mq(sm) {
+          font-size: 1.1rem;
+        }
+      }
+      .box {
+        border: 1px solid #6c5545;
+        display: inline-block;
+        padding: 28px 40px;
+        margin: 40px auto 0;
+        position: relative;
+        color: v.$brown;
+        // @include c.mq(md) {
+        //     width: 100%;
+        //     margin: 80px auto 90px;
+        // }
+        @include c.mq(sm) {
+          margin: 20px v.pxtovw_sp(24) 0;
+        }
+        .frame_deco {
+          width: 40px;
+          height: 42px;
+          position: absolute;
+          @include c.mq(sm) {
+            width: 40px;
+            height: 42px;
+          }
+          img {
+            width: 100%;
+          }
+        }
+        .deco_01 {
+          top: 0;
+          left: 0;
+        }
+        .deco_02 {
+          top: 0;
+          right: 0;
+        }
+        .deco_03 {
+          bottom: 0;
+          right: 0;
+        }
+        .deco_04 {
+          bottom: 0;
+          left: 0;
+        }
+        .disp {
+          font-size: 1.3rem;
+          line-height: 2;
+          letter-spacing: 0.03em;
+          // @include c.mq(sm) {
+          //     font-size: 1.5rem;
+          // }
+        }
+      }
+    }
+    .image {
+      width: 55%;
+      height: 100%;
+      background: url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/ba_bg_kv.png")
+        no-repeat center / cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include c.mq(md) {
+        width: 60%;
+      }
+      @include c.mq(sm) {
+        width: 100%;
+      }
+      img {
+        width: 100%;
+        max-width: 474px;
+      }
+    }
+  }
+
+  /*************************************************
+concept
+*************************************************/
+
+  .sec-concept {
+    padding: 130px 0;
+    color: v.$brown;
+    position: relative;
+    z-index: 1;
+    @include c.mq(sm) {
+      padding: 80px 0;
+    }
+    .text {
+      color: #526261;
+      text-align: center;
+      font-size: 1.8rem;
+      line-height: 3;
+      letter-spacing: 0.03em;
+      @include c.mq(sm) {
+        font-size: 1.4rem;
+        line-height: 2.6;
+      }
+    }
+    .deco {
+      margin: 60px 0;
+      text-align: center;
+      @include c.mq(sm) {
+        margin: 30px 0 0;
+      }
+      img {
+        width: 143px;
+      }
+    }
+  }
+
+  /*************************************************
+lastick
+*************************************************/
+
+  .sec-lastick {
+    position: relative;
+    .flex_wrap {
+      justify-content: center;
+      gap: 70px;
+      @include c.mq(md) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    .text {
+      max-width: 489px;
+      color: v.$brown;
+      h2 {
+        margin: 0 0 34px;
+        @include c.mq(sm) {
+          margin: 0 0 30px;
+          text-align: center;
+        }
+        span {
+          @include c.mq(sm) {
+            display: block;
+          }
+        }
+        .main {
+          font-size: 3.2rem;
+          letter-spacing: 0.03em;
+        }
+        .sub {
+          color: rgba(60, 33, 14, 0.5);
+          letter-spacing: 0.03em;
+          display: inline-block;
+          margin: 0 0 0 10px;
+          @include c.mq(sm) {
+            margin: 0;
+          }
+        }
+      }
+      p {
+        line-height: 2;
+        letter-spacing: 0.02em;
+        margin: 0 0 20px;
+      }
+      .deco {
+        margin: 30px 0 0;
+        width: 200px;
+        @include c.mq(sm) {
+          width: 160px;
+          margin: 20px auto 0;
+        }
+      }
+    }
+    .image {
+      width: 31.25vw;
+      @include c.mq(sm) {
+        width: 100%;
+      }
+    }
+  }
+
+  /*************************************************
+flavors
+*************************************************/
+
+  .sec-flavors {
+    margin: 100px 0 120px;
+    color: v.$brown;
+    @include c.mq(sm) {
+      margin: 80px 0;
+    }
+    .sec_heading {
+      text-align: center;
+      margin: 0 0 34px;
+      @include c.mq(sm) {
+        margin: 0 0 20px;
+      }
+    }
+    .flavors_list {
+      margin: 40px 0 0;
+      list-style-type: decimal;
+      font-size: 2.4rem;
+      font-style: italic;
+      letter-spacing: 0.03em;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px 40px;
+      @include c.mq(sm) {
+        margin: 20px 0 0;
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 20px 0;
+      }
+      li {
+        width: calc(50% - (1.5em + 20px));
+        margin: 0 0 0 1.5em;
+        @include c.mq(sm) {
+          width: calc(100% - 1.5em);
+        }
+        h3 {
+          span {
+            display: block;
+          }
+          .ja {
+            color: rgba(60, 33, 14, 0.5);
+            font-size: 1.6rem;
+            letter-spacing: 0.03em;
+            font-style: normal;
+            line-height: 1.2;
+            @include c.mq(sm) {
+              font-size: 1.3rem;
+            }
+          }
+        }
+        p {
+          margin: 10px 0 0;
+          font-size: 1.6rem;
+          letter-spacing: 0.03em;
+          font-style: normal;
+          @include c.mq(sm) {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+
+  /*************************************************
+product
+*************************************************/
+
+  .sec-product {
+    background: #526261
+      url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_wall.png")
+      repeat center / 250px;
+    padding: 80px 0 30px;
+    @include c.mq(sm) {
+      padding: 60px 0;
+    }
+    .sec_heading {
+      text-align: center;
+    }
+    .contents_wrapper {
+      margin: 68px 0;
+      @include c.mq(sm) {
+        margin: 30px 0;
+        gap: 30px 0;
+      }
+      .item {
+        @include c.mq(sm) {
+          width: 100%;
+        }
+        .caption {
+          .price {
+            @include c.mq(sm) {
+              margin: 0;
+            }
+          }
+        }
+      }
+      &::after {
+        @include c.mq(sm) {
+          display: none;
+        }
+      }
+    }
+    .pagination_wrapper {
+      margin: 60px 0;
+      display: none;
+      @include c.mq(sm) {
+        margin: 30px 0;
+      }
+    }
+  }
+
+  /*************************************************
+brand_link
+*************************************************/
+
+  .sec-brand_link {
+    background: #3c210e
+      url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_brown.png")
+      repeat left top / cover;
+    margin: 0;
+    padding: 80px 0 130px;
+    @include c.mq(sm) {
+      padding: 80px 0;
+    }
+  }
+}

@@ -1,0 +1,243 @@
+<!-- BEGIN sections: kv -->
+<section class="sec-kv">
+
+  <style>
+    {%- for block in section.blocks -%}
+      {% assign index = forloop.index %}
+      .top-page .sec-kv .container .item:nth-child({{ index }}) .brand_link {
+        background: url({{ block.settings.bg_image_pc | image_url }}) no-repeat center / cover;
+      }
+      @media screen and (max-width: 1024px) {
+        .top-page .sec-kv .container .item:nth-child({{ index }}) .brand_link {
+          background-image: url({{ block.settings.bg_image_sp | image_url }});
+        }
+      }
+    {%- endfor -%}
+  </style>
+
+  <div class="container">
+
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'kv_brand' -%}
+          <div class="item fadeIn" data-delay="{{ block.settings.animation_delay }}" {{ block.shopify_attributes }}>
+            <a href="{{ block.settings.link_url }}" class="brand_link">
+              <div class="logo_wrap">
+                <div class="brand_logo">
+                  {%- if block.settings.brand_logo -%}
+                    <img src="{{ block.settings.brand_logo | image_url }}" alt="">
+                  {%- endif -%}
+                </div>
+                <p class="brand_copy">{{ block.settings.brand_copy }}</p>
+                {%- if block.settings.show_buy_button -%}
+                  <p class="buy_text">ご購入はこちら<span class="icon"><img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/icon_arrow_w.svg" alt=""></span></p>
+                {%- endif -%}
+              </div>
+            </a>
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+
+  </div>
+</section>
+<!-- END sections: kv -->
+
+<!-- BEGIN sections: ba_products -->
+<section class="sec-products_slider">
+  <div class="l-inner">
+    <h2 class="sec_heading">
+      BAKE ADORN
+    </h2>
+    <!-- 商品スライダー -->
+    <div class="slide_image_wrap">
+      <div class="products_swiper_wrap ba_slider">
+        <div class="swiper ba_products_slider">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+
+            <!-- Slides -->
+            {% for product in collections.bake-adorn.products limit: 10 %}
+              <div class="swiper-slide">
+                <div class="item">
+                  <a href="{{ product.url }}" class="product_link">
+                    <div class="image">
+                      <img src="{{ product.featured_image.src | img_url: 'master' }}" alt="">
+                    </div>
+                    <div class="caption">
+                      <span class="brand">BAKE ADORN</span>
+                      <span class="product_name">{{ product.title }}</span>
+                      <span class="price">
+                        <span class="num">{{ product.price | money }}</span><span class="tax">（税込）</span>
+                      </span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            {% endfor %}
+
+          </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+    <div class="more_btn">
+      <a href="bake-adorn.html">
+        <span>View All</span>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- END sections: ba_products -->
+
+<!-- BEGIN sections: sol_products -->
+<section class="sec-products_slider">
+  <div class="l-inner">
+    <h2 class="sec_heading">
+      gelato SOLBELLA
+    </h2>
+    <!-- 商品スライダー -->
+    <div class="slide_image_wrap">
+      <div class="products_swiper_wrap sol_slider">
+        <div class="swiper sol_products_slider">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+
+            <!-- Slides -->
+            {% for product in collections.gelato-solbella.products limit: 10 %}
+              <div class="swiper-slide">
+                <div class="item">
+                  <a href="{{ product.url }}" class="product_link">
+                    <div class="image">
+                      <img src="{{ product.featured_image.src | img_url: 'master' }}" alt="">
+                    </div>
+                    <div class="caption">
+                      <span class="brand">gelato SOLBELLA</span>
+                      <span class="product_name">{{ product.title }}</span>
+                      <span class="price">
+                        <span class="num">{{ product.price | money }}</span><span class="tax">（税込）</span>
+                      </span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            {% endfor %}
+
+          </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+    <div class="more_btn">
+      <a href="gelato-solbella.html">
+        <span>View All</span>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- END sections: sol_products -->
+
+<!-- BEGIN sections: shoplink -->
+<div class="sec-shoplink">
+  <a href="/collection/all/">
+    <div class="text">
+      <span>O</span>nline&nbsp;<span>S</span>hop
+      <span class="icon">
+        <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/icon_arrow_r_w.svg" alt="">
+      </span>
+    </div>
+  </a>
+</div>
+<!-- END sections: shoplink -->
+
+<!-- BEGIN sections: concept -->
+<section class="sec-concept">
+  <div class="l-inner">
+    <div class="flex_wrap">
+      <div class="image js-parallax">
+        <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/top_concept_img.jpg" alt="">
+      </div>
+      <div class="text">
+        <h2 class="sec_heading">
+          フレッシュなスイーツと<br>心地良い空間
+        </h2>
+        <p>
+          Hyde&Away - あなただけの特別な隠れ家
+        </p>
+        <p>
+          まるで大切な隠れ家 ”hideaway” のように、<br>世界のアンティーク家具に囲まれた<br>少しラグジュアリーであたたかい空間で、<br>心地よく美味しい時間をお過ごしいただきたいという<br
+            class="u-pc">想いを込めています。
+        </p>
+        <p>
+          旬の国産フルーツと有機小麦を使用したタルトで、<br class="u-pc">最高品質の味わいをお届けします。
+        </p>
+        <p>
+          お持ち帰りの際も店内で感じていただいた<br>特別な雰囲気をそのままに、一つ一つのタルトを<br>丁寧に箱にお入れしております。
+        </p>
+        <p>
+          日常を忘れ、贅沢なひとときを<br class="u-sp">お過ごしください。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END sections: concept -->
+
+
+{% schema %}
+  {
+    "name": "top-main",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "kv_brand",
+        "name": "Kv Brand",
+        "settings": [
+          {
+            "type": "url",
+            "id": "link_url",
+            "label": "Link URL"
+          },
+          {
+            "type": "image_picker",
+            "id": "bg_image_pc",
+            "label": "背景画像_PC"
+          },
+          {
+            "type": "image_picker",
+            "id": "bg_image_sp",
+            "label": "背景画像_SP"
+          },
+          {
+            "type": "image_picker",
+            "id": "brand_logo",
+            "label": "ブランドロゴ"
+          },
+          {
+            "type": "text",
+            "id": "brand_copy",
+            "label": "ブランドメッセージ"
+          },
+          {
+            "type": "number",
+            "id": "animation_delay",
+            "label": "Animation Delay (ms)",
+            "default": 200
+          },
+          {
+            "type": "checkbox",
+            "id": "show_buy_button",
+            "label": "リンクボタン有効/無効",
+            "default": false
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "top-main"
+      }
+    ]
+  }
+{% endschema %}

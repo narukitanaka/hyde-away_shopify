@@ -1,0 +1,137 @@
+<!-- BEGIN sections: shoplist -->
+<section class="sec-shoplist">
+  <div class="l-inner">
+    <h2 class="sec_heading">
+      <span>S</span>hop <span>L</span>ist
+    </h2>
+    <div class="scroll_wrap">
+      <ul class="shop_list">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'top-shopItem' -%}
+            <li {{ block.shopify_attributes }}>
+              <a href="shop-list.html#{{ block.settings.anchor }}">
+                <div class="image">
+                  {%- if block.settings.shop_image -%}
+                    <img src="{{ block.settings.shop_image | image_url }}" alt="{{ block.settings.shop_name }}">
+                  {%- endif -%}
+                </div>
+                <div class="text">
+                  <p class="en">
+                    {{ block.settings.en_location }}
+                  </p>
+                  <h3>
+                    {{ block.settings.shop_name }}
+                  </h3>
+                  <p class="address">
+                    {{ block.settings.address }}
+                  </p>
+                </div>
+              </a>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+        <li class="u-pc"></li>
+
+      </ul>
+    </div>
+
+    <div class="more_btn">
+      <a href="shop-list.html">
+        <span>View All</span>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- END sections: shoplist -->
+
+<!-- BEGIN sections: topics -->
+<section class="sec-topics">
+  <div class="s-inner">
+    <h2 class="sec_heading">
+      <span>T</span>opics
+    </h2>
+
+    <ul class="topics_list">
+      {%- for article in blogs['news'].articles limit: 3 -%}
+        <li>
+          <a href="{{ article.url }}">
+            <div class="flex_wrap">
+              <div class="text">
+                <p class="date">
+                  {{ article.created_at | date: "%Y/%m/%d" }}
+                </p>
+                <p class="title">
+                  {{ article.title }}
+                </p>
+              </div>
+              <div class="icon">
+                <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/icon_arrow_r_w.svg" alt="">
+              </div>
+            </div>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+    
+    <div class="more_btn">
+      <a href="topics.html">
+        <span>View More</span>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- END sections: topics -->
+
+
+{% schema %}
+{
+  "name": "top-shopList-topics",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "top-shopItem",
+      "name": "店舗情報",
+      "settings": [
+        {
+          "type": "text",
+          "id": "anchor",
+          "label": "アンカーリンク",
+          "info": "例: higashiyama（ShopListページのアンカーリンクと同じにしてください）"
+        },
+        {
+          "type": "image_picker",
+          "id": "shop_image",
+          "label": "店舗画像"
+        },
+        {
+          "type": "text",
+          "id": "en_location",
+          "label": "英語の地名",
+          "info": "例: kyoto higashiyama"
+        },
+        {
+          "type": "text",
+          "id": "shop_name",
+          "label": "店舗名",
+          "info": "例: Hyde&Away 京都東山店"
+        },
+        {
+          "type": "textarea",
+          "id": "address",
+          "label": "住所",
+          "info": "改行が必要な場合は<br>を入力してください"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "top-shopList-topics"
+    }
+  ]
+}
+{% endschema %}
+
+
+
+

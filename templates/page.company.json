@@ -1,0 +1,123 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_AtPtET": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3pXAPY": {
+          "type": "heading",
+          "settings": {
+            "heading": "Company",
+            "heading_size": "h0"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3pXAPY"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-a6f53b8e-a839-4a5f-b1d8-5d5d97d5ad42",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_hWG7eU": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_bXzFDh": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>会社名<\/strong>",
+            "text": "<p>株式会社ZOOOM TRANSPORT<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_VM96Cd": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>代表<\/strong>",
+            "text": "<p>今西 将太朗<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_6iME6A": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>事業内容<\/strong>",
+            "text": "<p>軽貨物運送業<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_E4YDAN": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>所在地<\/strong>",
+            "text": "<p>〒574-0028 大阪府大東市幸町23-36<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_JfNKgJ": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>電話番号<\/strong>",
+            "text": "<p>072-813-9913<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_YnraQj": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>E-mail<\/strong>",
+            "text": "<p>info@l-browninc.com<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_bXzFDh",
+        "column_VM96Cd",
+        "column_6iME6A",
+        "column_E4YDAN",
+        "column_JfNKgJ",
+        "column_YnraQj"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 1,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_AtPtET",
+    "multicolumn_hWG7eU"
+  ]
+}

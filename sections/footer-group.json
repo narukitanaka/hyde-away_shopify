@@ -1,0 +1,46 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "link_list_DUAAww": {
+          "type": "link_list",
+          "settings": {
+            "heading": "",
+            "menu": "footer"
+          }
+        },
+        "link_list_Ar7JXT": {
+          "type": "link_list",
+          "settings": {
+            "heading": "",
+            "menu": "footer-menu02"
+          }
+        }
+      },
+      "block_order": [
+        "link_list_DUAAww",
+        "link_list_Ar7JXT"
+      ],
+      "settings": {
+        "color_scheme": "scheme-96780821-3b97-4961-aade-b067e4cf2aa0",
+        "newsletter_enable": false,
+        "newsletter_heading": "ストアからのメールを受け取る",
+        "enable_follow_on_shop": false,
+        "show_social": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

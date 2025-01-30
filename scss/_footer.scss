@@ -1,0 +1,157 @@
+@use "variable" as v;
+@use "common" as c;
+/*************************************************
+footer
+*************************************************/
+footer {
+  position: sticky;
+  top: 100%;
+}
+
+.footer {
+  background: #241408
+    url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_wall.png")
+    repeat center / 250px;
+  .footer-inner {
+    padding: 80px 8.33vw 40px;
+    @include c.mq(sm) {
+      padding: 60px v.pxtovw_sp(24) 30px;
+    }
+  }
+  a {
+    color: #dbcfc5;
+  }
+  .flex_wrap {
+    justify-content: space-between;
+    @include c.mq(sm) {
+      flex-direction: column;
+    }
+  }
+  .logo_block {
+    width: clamp(180px, 10.69vw, 206px);
+    @include c.mq(sm) {
+      width: 127px;
+      margin: 0 auto 60px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .link_block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 60px;
+    @include c.mq(sm) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, auto);
+      grid-row-gap: 0;
+    }
+    .link_list {
+      li {
+        p {
+          color: #fff;
+          font-size: 1.8rem;
+          @include c.mq(sm) {
+            font-size: 1.6rem;
+          }
+        }
+        a {
+          color: #dbcfc5;
+          font-size: 1.4rem;
+          display: block;
+          padding: 5px 0;
+          transition: all 0.3s;
+          @include c.mq(sm) {
+            font-size: 1.3rem;
+          }
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+      &:nth-child(1) {
+        grid-area: 1 / 1 / 2 / 2;
+      }
+      &:nth-child(2) {
+        grid-area: 1 / 2 / 2 / 3;
+        @include c.mq(sm) {
+          grid-column: 1 / 2;
+          grid-row: 2 / 3;
+        }
+        a {
+          font-size: 1.8rem;
+          color: #fff;
+          @include c.mq(sm) {
+            font-size: 1.6rem;
+          }
+        }
+      }
+      &:nth-child(3) {
+        grid-area: 1 / 3 / 2 / 4;
+        @include c.mq(sm) {
+          grid-column: 2 / 3;
+          grid-row: 1 / 3;
+        }
+      }
+      &:nth-child(4) {
+        grid-area: 2 / 3 / 3 / 4;
+        @include c.mq(sm) {
+          grid-column: 1 / 3;
+          grid-row: 3 / 4;
+          margin: 60px 0 0;
+        }
+        a {
+          padding: 5px 0 5px 20px;
+          position: relative;
+          &::before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 12px;
+            background: url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/icon_arrow_w.svg")
+              no-repeat center / contain;
+            position: absolute;
+            top: 0.9em;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+  .bottom_block {
+    border-top: 1px solid rgba(108, 85, 69, 0.5);
+    margin: 100px 0 0;
+    padding: 23px 0 0;
+    @include c.mq(sm) {
+      margin: 60px 0 0;
+      padding: 20px 0 0;
+    }
+    .bottom_link_list {
+      display: flex;
+      font-size: 1.3rem;
+      gap: 16px;
+      @include c.mq(sm) {
+        flex-direction: column;
+        font-size: 1.1rem;
+        gap: 10px;
+      }
+      a {
+        transition: all 0.3s;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+    .copyright {
+      font-size: 1.2rem;
+      color: #dbcfc5;
+      @include c.mq(sm) {
+        font-size: 1rem;
+        text-align: center;
+        margin: 40px 0 0;
+      }
+    }
+  }
+}

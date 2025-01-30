@@ -1,0 +1,326 @@
+@use "variable" as v;
+@use "common" as c;
+/*************************************************
+gelato SOLBELLAブランドページ
+*************************************************/
+
+.sol-page {
+  background: #f9f9f9
+    url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_noise.png")
+    repeat center / 50px;
+
+  .sec_heading {
+    color: #013f89;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 70px;
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      width: 140px;
+      height: 6px;
+      background: url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/sol_deco_line.svg")
+        no-repeat center / contain;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  /*************************************************
+KV
+*************************************************/
+
+  .sec-kv {
+    padding: 81px 0 0;
+    @include c.mq(md) {
+      padding: 64px 0 0;
+    }
+    .container {
+      position: relative;
+      .image {
+        width: 100%;
+        height: min(calc(100vh - 81px), 800px);
+        @include c.mq(md) {
+          height: min(calc(100vh - 64px), 660px);
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .brand_name {
+          visibility: hidden;
+        }
+        img {
+          width: 240px;
+        }
+      }
+    }
+  }
+
+  /*************************************************
+concept
+*************************************************/
+
+  .sec-concept {
+    padding: 200px 0 0;
+    color: v.$brown;
+    @include c.mq(sm) {
+      padding: 80px 0 0;
+    }
+    .text {
+      text-align: center;
+      .copy {
+        color: #013f89;
+        font-size: 4rem;
+        letter-spacing: 0.03em;
+        line-height: 1.5;
+        margin: 0 0 60px;
+        @include c.mq(sm) {
+          font-size: 2.4rem;
+          margin: 0 0 40px;
+        }
+      }
+      p {
+        margin: 0 0 20px;
+        line-height: 2;
+        @include c.mq(sm) {
+          font-size: 1.3rem;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  /*************************************************
+flavors
+*************************************************/
+
+  .sec-flavors {
+    margin: 100px 0 120px;
+    color: #013f89;
+    @include c.mq(sm) {
+      margin: 80px 0;
+    }
+    .container {
+      background: #e4e9f0
+        url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_noise.png")
+        repeat center / 50px;
+      padding: 48px 10px 70px;
+      position: relative;
+      @include c.mq(sm) {
+        padding: 40px 17px 60px;
+      }
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        height: calc(80px / 2);
+        width: 80px;
+        clip-path: polygon(50% 0, 100% 100%, 0 100%);
+        background: #f9f9f9
+          url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_noise.png")
+          repeat center / 50px;
+        position: absolute;
+        @include c.mq(sm) {
+          height: calc(40px / 2);
+          width: 40px;
+        }
+      }
+      &::before {
+        top: -10px;
+        left: -30px;
+        transform: rotate(-45deg);
+        @include c.mq(sm) {
+          top: -5px;
+          left: -14px;
+        }
+      }
+      &::after {
+        bottom: -10px;
+        right: -30px;
+        transform: rotate(135deg);
+        @include c.mq(sm) {
+          bottom: -5px;
+          right: -14px;
+        }
+      }
+      .sec_heading {
+        @include c.mq(sm) {
+          font-size: 2.4rem;
+        }
+      }
+    }
+    .flavors_list {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 60px 40px;
+      @include c.mq(sm) {
+        gap: 30px 15px;
+      }
+      li {
+        width: 19.6%;
+        @include c.mq(sm) {
+          width: calc((100% - 15px) / 2);
+        }
+        .image {
+          margin: 0 0 15px;
+          img {
+            width: 100%;
+          }
+        }
+        h3 {
+          font-size: 1.5rem;
+          letter-spacing: 0.03em;
+          line-height: 1.7;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  /*************************************************
+feature
+*************************************************/
+
+  .sec-feature {
+    .sec_heading {
+      @include c.mq(sm) {
+        font-size: 2.4rem;
+      }
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 0 70px;
+      @include c.mq(md) {
+        flex-direction: column;
+        gap: 20px;
+      }
+      &.reverse {
+        flex-direction: row-reverse;
+        @include c.mq(md) {
+          flex-direction: column;
+        }
+      }
+      .text {
+        color: v.$brown;
+        max-width: 537px;
+        h3 {
+          color: #013f89;
+          font-size: 2.4rem;
+          letter-spacing: 0.03em;
+          margin: 0 0 15px;
+          @include c.mq(sm) {
+            font-size: 2rem;
+            margin: 0 0 10px;
+          }
+        }
+        p {
+          @include c.mq(sm) {
+            font-size: 1.4rem;
+          }
+        }
+      }
+      .image {
+        width: 34.72vw;
+        @include c.mq(sm) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .parasol {
+    overflow: hidden;
+    width: 100%;
+    height: 560px;
+    @include c.mq(sm) {
+      height: 450px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  /*************************************************
+product
+*************************************************/
+
+  .sec-product {
+    background: #013f89
+      url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_noise.png")
+      repeat center / 50px;
+    padding: 80px 0;
+    @include c.mq(sm) {
+      padding: 60px 0;
+    }
+    .sec_heading {
+      text-align: center;
+      color: #fff;
+      &::after {
+        background-image: url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/sol_deco_line_w.svg");
+      }
+    }
+    .contents_wrapper {
+      margin: 68px 0;
+      @include c.mq(sm) {
+        margin: 30px 0;
+        gap: 30px 0;
+      }
+      .item {
+        @include c.mq(sm) {
+          width: 100%;
+        }
+        .caption {
+          .price {
+            @include c.mq(sm) {
+              margin: 0;
+            }
+          }
+        }
+      }
+      &::after {
+        @include c.mq(sm) {
+          display: none;
+        }
+      }
+    }
+    .pagination_wrapper {
+      margin: 60px 0;
+      display: none;
+      @include c.mq(sm) {
+        margin: 30px 0;
+      }
+    }
+  }
+
+  /*************************************************
+brand_link
+*************************************************/
+
+  .sec-brand_link {
+    background: #3c210e
+      url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_brown.png")
+      repeat left top / cover;
+    margin: 0;
+    padding: 80px 0 130px;
+    @include c.mq(sm) {
+      padding: 80px 0;
+    }
+  }
+}

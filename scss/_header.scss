@@ -1,0 +1,360 @@
+@use "variable" as v;
+@use "common" as c;
+/*************************************************
+header
+*************************************************/
+
+.header {
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: v.$brown
+    url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_brown.png")
+    repeat left top / cover;
+  .header_inner {
+    width: 100%;
+    height: 81px;
+    padding: 0 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include c.mq(md) {
+      height: 64px;
+      padding: 0 2.56vw;
+    }
+  }
+  .g_nav {
+    @include c.mq(md) {
+      display: none;
+    }
+    .nav_link_list {
+      display: flex;
+      gap: 28px;
+      font-size: 1.3rem;
+      color: #f5efeb;
+      .has_dropdown {
+        &.mini_dropdown {
+          position: relative;
+        }
+        .submenu_wrap {
+          visibility: hidden;
+          opacity: 0;
+          transition: all 0.6s;
+          .submenu {
+            position: absolute;
+            top: calc(100% + 28px);
+            left: 50%;
+            background: #241408
+              url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_wall.png")
+              repeat center / 250px;
+            transform: translate(-50%, 0);
+          }
+          .big_menu {
+            width: 100%;
+            top: 100%;
+            left: 0;
+            transform: translate(0, 0);
+          }
+        }
+        .big_menu {
+          padding: 3.75vw 55px;
+          overflow-y: scroll;
+          .big_menu_inner {
+            max-width: 1600px;
+            ul {
+              display: flex;
+              align-items: flex-start;
+              // flex-wrap: wrap;
+              flex: 1;
+              gap: 40px 24px;
+              li {
+                a {
+                  display: block;
+                  figure {
+                    overflow: hidden;
+                    width: 200px;
+                    img {
+                      aspect-ratio: 124 / 91;
+                      min-width: 0;
+                      object-fit: cover;
+                      transition: transform 0.6s ease;
+                    }
+                  }
+                  &:hover {
+                    figure {
+                      img {
+                        transform: scale(1.1);
+                      }
+                    }
+                  }
+                  p {
+                    margin: 10px 0;
+                    font-size: 1.3rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .mini_menu {
+          min-width: 200px;
+          padding: 30px;
+          position: initial;
+          .under_link_list {
+            li {
+              a {
+                display: block;
+                padding: 10px 0;
+                transition: all 0.3s;
+                &:hover {
+                  opacity: 0.7;
+                }
+              }
+            }
+          }
+        }
+        &:hover {
+          .submenu_wrap {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .sp-gNav {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    z-index: 999;
+    padding: 60px 0 200px;
+    background: #241408
+      url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_wall.png")
+      repeat center / 250px;
+    transition: all 0.3s;
+    visibility: hidden;
+    opacity: 0;
+    @include c.mq(md) {
+      display: block;
+    }
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
+    .nav_link_list {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 30px;
+      li {
+        margin: 0 0 20px;
+        &.has_dropdown {
+          .nav_ttl {
+            border-bottom: 1px solid #3c210e;
+            padding: 0 0 10px;
+            margin: 0 0 5px;
+          }
+          .big_menu {
+            padding: 10px;
+            .big_menu_inner {
+              ul {
+                display: flex;
+                flex-wrap: wrap;
+                // justify-content: space-between;
+                gap: 20px;
+                li {
+                  a {
+                    figure {
+                      overflow: hidden;
+                      width: 180px;
+                      img {
+                        aspect-ratio: 124 / 91;
+                        min-width: 0;
+                        object-fit: cover;
+                      }
+                    }
+                    p {
+                      font-size: 1.3rem;
+                      letter-spacing: 0.03em;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .mini_menu {
+            ul {
+              li {
+                color: #dbcfc5;
+                font-size: 1.4rem;
+                margin: 0 0 5px;
+                a {
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+        .ja {
+          display: inline-block;
+          margin: 0 0 0 15px;
+          font-size: 1.2rem;
+          color: #dbcfc5;
+        }
+      }
+    }
+  }
+  .toggle_button {
+    display: none;
+    width: 40px;
+    height: 40px;
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    @include c.mq(md) {
+      display: flex;
+    }
+    .toggle_line {
+      @include c.mq(md) {
+        display: block;
+        width: 35px;
+        height: 2px;
+        background-color: #fff;
+        transition: all 0.4s;
+      }
+    }
+  }
+  .toggle_anime.active {
+    .toggle_line {
+      &:nth-child(1) {
+        transform: translateY(3.5px) rotate(-30deg);
+      }
+      &:nth-child(2) {
+        transform: translateY(-3.5px) rotate(30deg);
+      }
+    }
+  }
+  .header_logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 78px;
+    @include c.mq(md) {
+      width: 60px;
+    }
+  }
+  .header_btn_area {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    @include c.mq(md) {
+      gap: 8px;
+    }
+    .btn_wrap {
+      a {
+        display: block;
+        border-radius: 9999px;
+        width: 118px;
+        font-size: 1.3rem;
+        text-align: center;
+        padding: 7px 10px;
+        @include c.mq(md) {
+          width: 40px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0;
+        }
+        .icon {
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          vertical-align: bottom;
+        }
+        .btn_name {
+          @include c.mq(md) {
+            display: none;
+          }
+        }
+      }
+    }
+    .account_btn {
+      a {
+        border: 2px solid #dbcfc5;
+        color: #f5efeb;
+        @include c.mq(md) {
+          border: 1px solid #dbcfc5;
+        }
+      }
+    }
+    .cart_btn {
+      a {
+        background-color: #dbcfc5;
+        color: v.$brown;
+      }
+    }
+  }
+}
+
+// トップページのみスクロールでヘッダーの高さ変化
+.top-page {
+  .header {
+    position: sticky;
+    top: -88px;
+    height: 168px;
+    background: transparent;
+    @include c.mq(md) {
+      position: fixed;
+      top: 0;
+      height: 64px;
+      background: v.$brown
+        url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_brown.png")
+        repeat left top / cover;
+    }
+    .header_inner {
+      width: 100%;
+      height: 81px;
+      position: sticky;
+      top: 0;
+      padding: 0 52px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include c.mq(md) {
+        position: initial;
+        height: 64px;
+        padding: 0 2.56vw;
+      }
+      .header_logo {
+        transition: width 0.4s ease;
+        width: 98px;
+        @include c.mq(md) {
+          width: 60px;
+        }
+      }
+    }
+    &.is-scrolled {
+      .header_inner {
+        background: v.$brown
+          url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_brown.png")
+          repeat left top / cover;
+        .header_logo {
+          width: 78px;
+          @include c.mq(md) {
+            width: 60px;
+          }
+        }
+      }
+    }
+  }
+}

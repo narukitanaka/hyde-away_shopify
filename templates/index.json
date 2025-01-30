@@ -1,0 +1,160 @@
+{
+  "sections": {
+    "top_main_NeanEb": {
+      "type": "top-main",
+      "blocks": {
+        "kv_brand_yx3Peq": {
+          "type": "kv_brand",
+          "settings": {
+            "link_url": "shopify:\/\/collections\/bake-adorn",
+            "bg_image_pc": "shopify:\/\/shop_images\/top_kv_ba.jpg",
+            "bg_image_sp": "shopify:\/\/shop_images\/top_kv_ba_sp.jpg",
+            "brand_logo": "shopify:\/\/shop_images\/logo_ba_w.svg",
+            "brand_copy": "Adorn your day,Add on your moments.",
+            "animation_delay": 400,
+            "show_buy_button": true
+          }
+        },
+        "kv_brand_7GitME": {
+          "type": "kv_brand",
+          "settings": {
+            "link_url": "shopify:\/\/collections",
+            "bg_image_pc": "shopify:\/\/shop_images\/top_kv_ha.jpg",
+            "bg_image_sp": "shopify:\/\/shop_images\/top_kv_ha_sp.jpg",
+            "brand_logo": "shopify:\/\/shop_images\/logo_ha_w.svg",
+            "brand_copy": "May this cake make you smile.",
+            "animation_delay": 200,
+            "show_buy_button": false
+          }
+        },
+        "kv_brand_h9bHbr": {
+          "type": "kv_brand",
+          "settings": {
+            "link_url": "shopify:\/\/collections\/gelato-solbella",
+            "bg_image_pc": "shopify:\/\/shop_images\/top_kv_sol.jpg",
+            "bg_image_sp": "shopify:\/\/shop_images\/top_kv_sol_sp.jpg",
+            "brand_logo": "shopify:\/\/shop_images\/logo_sol_w.svg",
+            "brand_copy": "Sleeved Elegance,Unforgettable Delicacies.",
+            "animation_delay": 600,
+            "show_buy_button": true
+          }
+        }
+      },
+      "block_order": [
+        "kv_brand_yx3Peq",
+        "kv_brand_7GitME",
+        "kv_brand_h9bHbr"
+      ],
+      "settings": {}
+    },
+    "top_bland_list_pAbhpp": {
+      "type": "top-blandList",
+      "blocks": {
+        "top_brand_item_tVnniY": {
+          "type": "top-brandItem",
+          "settings": {
+            "link_url": "shopify:\/\/collections",
+            "image_pc": "shopify:\/\/shop_images\/top_brand_img_ha.jpg",
+            "image_sp": "shopify:\/\/shop_images\/top_brand_img_sp_ha.jpg",
+            "logo": "shopify:\/\/shop_images\/logo_ha_b.svg",
+            "description": "国産フルーツにこだわった[br]”ハコタルト”"
+          }
+        },
+        "top_brand_item_YxwMB7": {
+          "type": "top-brandItem",
+          "settings": {
+            "link_url": "",
+            "image_pc": "shopify:\/\/shop_images\/top_brand_img_ba.jpg",
+            "image_sp": "shopify:\/\/shop_images\/top_brand_img_sp_ba.jpg",
+            "logo": "shopify:\/\/shop_images\/logo_ba_b.svg",
+            "description": "憩いのひとときを彩るクッキー"
+          }
+        },
+        "top_brand_item_xUbpy3": {
+          "type": "top-brandItem",
+          "settings": {
+            "link_url": "",
+            "image_pc": "shopify:\/\/shop_images\/top_brand_img_sol.jpg",
+            "image_sp": "shopify:\/\/shop_images\/top_brand_img_sp_sol.jpg",
+            "logo": "shopify:\/\/shop_images\/logo_sol_b.svg",
+            "description": "なめらかな口当たりを追求した[br]ジェラート"
+          }
+        }
+      },
+      "block_order": [
+        "top_brand_item_tVnniY",
+        "top_brand_item_YxwMB7",
+        "top_brand_item_xUbpy3"
+      ],
+      "settings": {}
+    },
+    "top_shop_list_topics_YbmxwL": {
+      "type": "top-shopList-topics",
+      "blocks": {
+        "top_shop_item_CYXziz": {
+          "type": "top-shopItem",
+          "settings": {
+            "anchor": "higashiyama",
+            "shop_image": "shopify:\/\/shop_images\/top_shop_higashiyama.jpg",
+            "en_location": "kyoto higashiyama",
+            "shop_name": "Hyde&Away 京都東山店",
+            "address": "京都府京都市東山区本瓦町672"
+          }
+        },
+        "top_shop_item_PpnYNb": {
+          "type": "top-shopItem",
+          "settings": {
+            "anchor": "kitano",
+            "shop_image": "shopify:\/\/shop_images\/top_shop_kitano.jpg",
+            "en_location": "kyoto kitano",
+            "shop_name": "Hyde&Away 京都北野店",
+            "address": "京都府京都市上京区東竪町118-2 モリキビル 1F"
+          }
+        },
+        "top_shop_item_wRPm8h": {
+          "type": "top-shopItem",
+          "settings": {
+            "anchor": "sannomiya",
+            "shop_image": "shopify:\/\/shop_images\/top_shop_sannnomiya.jpg",
+            "en_location": "kobe sannomiya",
+            "shop_name": "Hyde&Away 神戸三宮店",
+            "address": "兵庫県神戸市中央区中山手通1丁目27番地8"
+          }
+        },
+        "top_shop_item_itLR7e": {
+          "type": "top-shopItem",
+          "settings": {
+            "anchor": "nagoya",
+            "shop_image": "shopify:\/\/shop_images\/top_shop_nagoya.jpg",
+            "en_location": "nagoya",
+            "shop_name": "Hyde&Away 名古屋店",
+            "address": "愛知県名古屋市千種区内山3丁目21-11<br>\nクルールクリート 2F"
+          }
+        },
+        "top_shop_item_AaCbeY": {
+          "type": "top-shopItem",
+          "settings": {
+            "anchor": "osaka",
+            "shop_image": "shopify:\/\/shop_images\/top_shop_osaka.jpg",
+            "en_location": "osaka",
+            "shop_name": "Hyde&Away 大阪店",
+            "address": "大阪府大阪市西区南堀江1丁目8-7"
+          }
+        }
+      },
+      "block_order": [
+        "top_shop_item_CYXziz",
+        "top_shop_item_PpnYNb",
+        "top_shop_item_wRPm8h",
+        "top_shop_item_itLR7e",
+        "top_shop_item_AaCbeY"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "top_main_NeanEb",
+    "top_bland_list_pAbhpp",
+    "top_shop_list_topics_YbmxwL"
+  ]
+}

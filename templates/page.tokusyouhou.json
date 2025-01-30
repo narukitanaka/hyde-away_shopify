@@ -1,0 +1,183 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_AtPtET": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3pXAPY": {
+          "type": "heading",
+          "settings": {
+            "heading": "特定商取引法に基づく表示",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3pXAPY"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-a6f53b8e-a839-4a5f-b1d8-5d5d97d5ad42",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_hWG7eU": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_bXzFDh": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>会社名<\/strong>",
+            "text": "<p>株式会社ZOOOM TRANSPORT<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_E4YDAN": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>会社住所<\/strong>",
+            "text": "<p>〒574-0028 大阪府大東市幸町23-36<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_JfNKgJ": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>電話番号<\/strong>",
+            "text": "<p>072-813-9913<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_YnraQj": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>E-mail<\/strong>",
+            "text": "<p>info@l-browninc.com<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_VM96Cd": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>責任者<\/strong>",
+            "text": "<p>今西 将太朗<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_dkFfkW": {
+          "type": "column",
+          "settings": {
+            "title": "追加手数料等の追加料金",
+            "text": "<p>無し<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_qEJWcM": {
+          "type": "column",
+          "settings": {
+            "title": "返品ポリシー",
+            "text": "<p>ご注文確定後のお客様都合によるキャンセル・返品・交換・ご注文内容の変更は、原則承っておりません。<br\/>商品の品質につきましては万全を期しておりますが、万が一、ご注文商品と異なる商品が届いた場合や、配送中などになんらかの不備が生じた場合は速やかに代替品などの手配を取らせていただきます。<br\/>ご注文商品と異なる商品や不良品をお届けした場合、商品到着後7日以内に下記メールアドレスまでご連絡いただきますようお願い申し上げます。<br\/>info@l-browninc.com<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_qXd9Xi": {
+          "type": "column",
+          "settings": {
+            "title": "引渡時期",
+            "text": "<p>注文は 3 ～ 5 営業日以内に処理され、商品は 7 日以内に到着します。<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_r37Jb4": {
+          "type": "column",
+          "settings": {
+            "title": "商品の販売価格",
+            "text": "<p>商品ページをご参照ください。<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_mjjFL9": {
+          "type": "column",
+          "settings": {
+            "title": "代金の支払方法",
+            "text": "<p>クレジットカード決済<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_mXT4Qh": {
+          "type": "column",
+          "settings": {
+            "title": "代金の支払時期",
+            "text": "<p>クレジットカード決済の場合はただちに処理されます。<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_RXNDwk": {
+          "type": "column",
+          "settings": {
+            "title": "キャンセル（返品・交換\/返品特約）",
+            "text": "<p>お客様都合での決済後のキャンセルは基本的にできません。<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_bXzFDh",
+        "column_E4YDAN",
+        "column_JfNKgJ",
+        "column_YnraQj",
+        "column_VM96Cd",
+        "column_dkFfkW",
+        "column_qEJWcM",
+        "column_qXd9Xi",
+        "column_r37Jb4",
+        "column_mjjFL9",
+        "column_mXT4Qh",
+        "column_RXNDwk"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 1,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_AtPtET",
+    "multicolumn_hWG7eU"
+  ]
+}

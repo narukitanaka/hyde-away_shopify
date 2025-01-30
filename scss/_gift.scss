@@ -1,0 +1,98 @@
+@use "variable"as v;
+@use "common"as c;
+/*************************************************
+ギフトについて
+*************************************************/
+
+.gift-page {
+
+.sec-gift {
+    margin: 0 0 120px;
+    @include c.mq(sm) {
+        margin: 0 0 60px;
+    }
+    .flex_wrap {
+        justify-content: space-between;
+        gap: 30px;
+        @include c.mq(md) {
+            flex-direction: column;
+            align-items: center;
+        }
+        @include c.mq(sm) {
+            gap: 20px;
+        }
+        .text {
+            max-width: 536px;
+        }
+        .image {
+            max-width: 600px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .top_contents {
+        margin: 0 0 160px;
+        @include c.mq(sm) {
+            margin: 0 0 80px;
+        }
+        h2 {
+            font-size: 3.2rem;
+            letter-spacing: .03em;
+            line-height: 1.5;
+            margin: 0 0 40px;
+            @include c.mq(sm) {
+                font-size: 2.4rem;
+                margin: 0 0 20px;
+            }
+        }
+        p {
+            line-height: 2;
+            letter-spacing: .03em;
+            margin: 0 0 1.2em;
+            @include c.mq(sm) {
+                font-size: 1.4rem;
+            }
+        }
+    }
+    .bottom_contents {
+        border-top: 1px solid #6C5545;
+        padding: 80px 0;
+        @include c.mq(sm) {
+            padding: 40px 0;
+        }
+        .item {
+            display: flex;
+            h3 {
+                font-size: 2.0rem;
+                letter-spacing: .03em;
+                margin: 0 0 10px;
+            }
+            .image {
+                margin: 0 0 30px;
+                @include c.mq(sm) {
+                    margin: 0 0 10px;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+            p {
+                line-height: 2;
+                letter-spacing: .03em;
+                margin: 0 0 10px;
+                @include c.mq(sm) {
+                    font-size: 1.4rem;
+                }
+            }
+            .supplement {
+                font-size: 1.4rem;
+                color: #DBCFC5;
+                @include c.mq(sm) {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+}
