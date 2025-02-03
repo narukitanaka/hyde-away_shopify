@@ -307,6 +307,9 @@
       {% if template == 'page.hydeandaway' %}brand-page ha-page{% endif %}
       {% if template == 'page.solbella' %}brand-page sol-page{% endif %}
       {% if template == 'page.bakeadorn' %}brand-page ba-page{% endif %}
+      {% if template == 'page.shoplist' %}shop-page{% endif %}
+      {% if template == 'blog' %}info-page{% endif %}
+      {% if template == 'article' %}topics-detail-page{% endif %}
     ">
       {% comment %} <a class="skip-to-content-link button visually-hidden" href="#MainContent">
         {{ 'accessibility.skip_to_text' | t }}
@@ -317,10 +320,66 @@
       {%- endif -%}
   
       {% sections 'header-group' %}
-  
-      <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+
+      {% if template == 'page.shoplist' %}
+        <!-- BEGIN sections: page-header -->
+        <section class="page-header">
+          <h1 class="page-heading">
+            <span class="en">Shop List</span>
+            <span class="ja">店舗一覧</span>
+          </h1>
+        </section>
+        <!-- END sections: page-header -->
+
+        <div class="column-wrapper l-inner">
+          <!-- BEGIN aside: sidebar -->
+          <aside class="sidebar">
+            <div class="sidebar_inner">
+              <ul class="link_list" id="storeSidebar">
+                <!-- JavaScriptで動的に生成 -->
+              </ul>
+            </div>
+          </aside>
+          <!-- END aside: sidebar -->
+
+          <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            if (window.storeListData && window.storeListData.length > 0) {
+              const sidebar = document.getElementById('storeSidebar');
+              window.storeListData.forEach(store => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `#${store.id}`;
+                a.textContent = store.name;
+                li.appendChild(a);
+                sidebar.appendChild(li);
+              });
+            }
+          });
+          </script>
+      {% endif %}
+
+      <main id="MainContent" class="{% if template == 'page.shoplist' %}contents_wrapper{% endif %} content-for-layout focus-none" role="main" tabindex="-1">
         {{ content_for_layout }}
       </main>
+
+      {% if template == 'page.shoplist' %}
+        </div>
+        <!-- BEGIN sections: breadcrumbs -->
+        <div class="breadcrumbs">
+          <ol>
+            <li>
+              <a href="{{ routes.root_url }}">
+                <span>home</span>
+              </a>
+            </li>
+            <li>
+              <span>Shop List</span>
+            </li>
+          </ol>
+        </div>
+        <!-- END sections: breadcrumbs -->
+      {% endif %}
   
       {% sections 'footer-group' %}
     </div>

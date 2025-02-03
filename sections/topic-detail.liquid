@@ -1,0 +1,106 @@
+<!-- BEGIN article -->
+<article>
+  <div class="title_wrap">
+    <p class="date">{{ article.published_at | date: "%Y/%m/%d" }}</p>
+    <h1 class="topics_title">
+      {{ article.title }}
+    </h1>
+  </div>
+  <div class="contents_wrap">
+    {{ article.content }}
+    {% comment %} <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files//topics_sample_img.jpg" alt="">
+    <p>
+      本文が入ります。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れ
+    </p>
+    <p>
+      本文が入ります。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れ本文が入ります。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れ本文が入ります。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れ
+    </p>
+    <h1>
+      h1見出しのサンプルです
+    </h1>
+    <h2>
+      h2見出しのサンプルです
+    </h2>
+    <h3>
+      h3見出しのサンプルです
+    </h3>
+    <h4>
+      h4見出しのサンプルです
+    </h4>
+    <p>
+      <a href="#">リンク</a>のサンプルです
+    </p>
+    <p>
+      <a href="#">https://hydeandaway.jp/</a>
+    </p>
+    リストのサンプルです
+    <ul>
+      <li>リスト1本文が入ります。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れ本文が入ります。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れ本文が入ります。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れ</li>
+      <li>リスト2</li>
+      <li>リスト3</li>
+    </ul>
+    <ol>
+      <li>番号付リスト1本文が入ります。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れ本文が入ります。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れ本文が入ります。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れ</li>
+      <li>番号付リスト2</li>
+      <li>番号付リスト3</li>
+    </ol>
+    <br>
+    表のサンプルです
+    <table height="111" width="557">
+      <tbody>
+        <tr>
+          <td style="width: 149.188px;">項目１</td>
+          <td style="width: 396.812px;">
+            <p>&nbsp;なんとかかんとか</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="width: 149.188px;">項目２</td>
+          <td style="width: 396.812px;">
+            <p>ほにゃらら</p>
+            <p>ああああ</p>
+          </td>
+        </tr>
+      </tbody>
+    </table> {% endcomment %}
+  </div>
+  <div class="article_footer">
+    <div class="more_btn">
+      <a href="/blogs/news/">
+        <span>Back to List</span>
+      </a>
+    </div>
+  </div>
+</article>
+<!-- END article -->
+
+<!-- BEGIN sections: breadcrumbs -->
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="{{ routes.root_url }}">
+        <span>home</span>
+      </a>
+    </li>
+    <li>
+      <a href="/blogs/news/">
+        <span>Topics</span>
+      </a>
+    </li>
+    <li>
+      <span>{{ article.title }}</span>
+    </li>
+  </ol>
+</div>
+<!-- END sections: breadcrumbs -->
+
+{% schema %}
+  {
+    "name": "topic-detail",
+    "presets": [
+      {
+        "name": "topic-detail"
+      }
+    ]
+  }
+{% endschema %}

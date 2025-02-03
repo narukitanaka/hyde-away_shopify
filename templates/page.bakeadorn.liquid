@@ -1,0 +1,244 @@
+<!-- BEGIN sections: kv -->
+<section class="sec-kv">
+  <div class="container">
+    <div class="text">
+      <div class="flex_wrap">
+        <h1 class="brand_logo fadeIn" data-delay="200">
+          <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/logo_ba_b.svg" alt="bake adorn">
+        </h1>
+        <p class="copy fadeIn" data-delay="400">
+          Adorn your day, Add on your moments.
+        </p>
+        <div class="box fadeIn" data-delay="600">
+          <div class="frame_deco deco_01">
+            <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/deco_frame_01.svg" alt="">
+          </div>
+          <div class="frame_deco deco_02">
+            <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/deco_frame_02.svg" alt="">
+          </div>
+          <div class="frame_deco deco_03">
+            <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/deco_frame_03.svg" alt="">
+          </div>
+          <div class="frame_deco deco_04">
+            <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/deco_frame_04.svg" alt="">
+          </div>
+          <p class="disp">
+            BAKE ADORN は<br class="u-pc">Hyde&Away のタルト生地と同様に、<br class="u-pc">有機小麦にこだわった焼き菓子ブランドです。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="image fadeIn">
+      <picture>
+        <source media="(min-width: 600px)" srcset="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/ba_kv.jpg">
+        <source media="(max-width: 599px)" srcset="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/ba_kv.jpg">
+        <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/ba_kv.jpg" alt="">
+      </picture>
+    </div>
+  </div>
+</section>
+<!-- END sections: kv -->
+
+<!-- BEGIN sections: product -->
+<section class="sec-product">
+  <div class="l-inner">
+    <h2 class="sec_heading">
+      Line Up
+    </h2>
+    <div class="contents_wrapper">
+
+      {% for product in collections.bake-adorn.products %}
+        <div class="item">
+          <a href="{{ product.url }}" class="product_link">
+            <div class="image">
+              <img src="{{ product.featured_image.src | img_url: 'master' }}" alt="">
+            </div>
+            <div class="caption">
+              <span class="brand">BAKE ADORN</span>
+              <span class="product_name">{{ product.title }}</span>
+              <span class="price">
+                <span class="num">{{ product.price | money }}</span><span class="tax">（税込）</span>
+              </span>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+
+    </div>
+    <div class="pagination_wrapper">
+      <nav class="pagination" role="navigation" aria-label="ページネーション">
+        <ul class="pagination__list" role="list">
+          <li>
+            <a role="link" class="pagination__item pagination__item--current">1</a>
+          </li>
+          <li>
+            <a href="#" class="pagination__item link">2</a>
+          </li>
+          <li>
+            …
+          </li>
+          <li>
+            <a href="#" class="pagination__item link">99</a>
+          </li>
+          <li>
+            <a href="#" class="pagination__item pagination__item--prev pagination__item-arrow">
+              <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/icon_arrow_r_w.svg" alt="">
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</section>
+<!-- END sections: product -->
+
+<!-- BEGIN sections: concept -->
+<div class="sec-concept">
+  <div class="l-inner">
+    <div class="text">
+      <p>
+        シャビーウッドのテーブルに映えるような<br>アンティーク調の食器や陶器のティーポット。<br>お花やキャンドルが飾られているあたたかな空間で、<br>昼間はコーヒーや紅茶、<br>夜はキャンドルを灯してワインと一緒に。
+      </p>
+    </div>
+    <div class="deco">
+      <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/deco_sec-line.svg" alt="">
+    </div>
+  </div>
+</div>
+<!-- END sections: concept -->
+
+<!-- BEGIN sections: lastick -->
+<section class="sec-lastick">
+  <div class="m-inner">
+    <div class="flex_wrap">
+      <div class="text fadeIn">
+        <h2>
+          <span class="main">La Stick</span>
+          <span class="sub">クッキー</span>
+        </h2>
+        <p>
+          Hyde&Away が生まれた煉瓦造りの建物が持つあたたかさを感じる rustic な雰囲気と特徴的なクッキーの形状から、私たちはこのクッキーを”La Stick”と名付けました。
+        </p>
+        <p>
+          クッキーはパティシエの手によって一本一本繊細な飾り付けが施されています。<br>
+          それぞれのクッキーが紙に包まれており、あなたやあなたの大切な人がその包み紙を開けるとき、有機小麦やバターの豊かな香り、クッキーを彩るナッツや抹茶、チョコレートとともにそこには特別な瞬間が待っています。
+        </p>
+        <div class="deco">
+          <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/teapot.png" alt="">
+        </div>
+      </div>
+      <div class="image fadeIn">
+        <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/la-stick_img.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END sections: lastick -->
+
+<!-- BEGIN sections: flavors -->
+<section class="sec-flavors">
+  <div class="m-inner">
+    <h2 class="sec_heading">
+      Flavors
+    </h2>
+    <div class="image fadeIn">
+      <picture>
+        <source media="(min-width: 600px)" srcset="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/ba_flavors_pc.jpg">
+        <source media="(max-width: 599px)" srcset="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/ba_flavors_sp.jpg">
+        <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/ba_flavors_pc.jpg" alt="">
+      </picture>
+    </div>
+    <ol class="flavors_list">
+      <li class="fadeIn">
+        <h3>
+          <span class="en">Bitter Chocolate</span>
+          <span class="ja">ビターチョコレート</span>
+        </h3>
+        <p>
+          ナッツ・ドライフルーツとカカオのほろ苦さが相性ぴったり
+        </p>
+      </li>
+      <li class="fadeIn">
+        <h3>
+          <span class="en">Strawberry</span>
+          <span class="ja">ストロベリー</span>
+        </h3>
+        <p>
+          苺の贅沢な風味が楽しめる酸味豊かなストロベリーチョコレートを使用
+        </p>
+      </li>
+      <li class="fadeIn">
+        <h3>
+          <span class="en">White Chocolate</span>
+          <span class="ja">ホワイトチョコレート</span>
+        </h3>
+        <p>
+          刻んだピスタチオでアクセントを加えた繊細な甘みが特徴
+        </p>
+      </li>
+      <li class="fadeIn">
+        <h3>
+          <span class="en">Milk Chocolate</span>
+          <span class="ja">ミルクチョコレート</span>
+        </h3>
+        <p>
+          三種類のクランチのザクザク食感が楽しい、まろやかなミルクチョコレートを使用
+        </p>
+      </li>
+      <li class="fadeIn">
+        <h3>
+          <span class="en">Black Sesame</span>
+          <span class="ja">黒ゴマ</span>
+        </h3>
+        <p>
+          黒ゴマの香りとコクを楽しめる深みのある黒ゴマチョコレートを使用
+        </p>
+      </li>
+      <li class="fadeIn">
+        <h3>
+          <span class="en">Kinako</span>
+          <span class="ja">きなこ</span>
+        </h3>
+        <p>
+          アーモンドを混ぜ込んだ香ばしいきなこチョコレートを使用
+        </p>
+      </li>
+      <li class="fadeIn">
+        <h3>
+          <span class="en">Matcha</span>
+          <span class="ja">抹茶</span>
+        </h3>
+        <p>
+          祇園・北川半兵衛の宇治抹茶を贅沢に練り込んだ濃厚な抹茶チョコレートを使用
+        </p>
+      </li>
+      <li class="fadeIn">
+        <h3>
+          <span class="en">Hojicha</span>
+          <span class="ja">ほうじ茶</span>
+        </h3>
+        <p>
+          祇園・北川半兵衛の極上ほうじ茶をたっぷりと使用した至福のほうじ茶チョコレート
+        </p>
+      </li>
+    </ol>
+  </div>
+</section>
+<!-- END sections: flavors -->
+
+{% section 'other-brands_bp03' %}
+
+<!-- BEGIN sections: breadcrumbs -->
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="{{ routes.root_url }}">
+        <span>home</span>
+      </a>
+    </li>
+    <li>
+      <span>BAKE ADORN</span>
+    </li>
+  </ol>
+</div>
+<!-- END sections: breadcrumbs -->

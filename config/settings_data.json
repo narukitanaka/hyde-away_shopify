@@ -139,7 +139,7 @@
           "other_brand_KKCkpr": {
             "type": "other-brand",
             "settings": {
-              "link_url": "shopify:\/\/collections\/bake-adorn",
+              "link_url": "shopify:\/\/pages\/bake-adorn",
               "brand_image": "shopify:\/\/shop_images\/top_brand_img_sp_ba.jpg",
               "brand_logo": "shopify:\/\/shop_images\/logo_ba_b.svg",
               "description": "憩いのひとときを彩るクッキー"
@@ -148,7 +148,7 @@
           "other_brand_kj4DEm": {
             "type": "other-brand",
             "settings": {
-              "link_url": "shopify:\/\/collections\/gelato-solbella",
+              "link_url": "shopify:\/\/pages\/gelato-solbella",
               "brand_image": "shopify:\/\/shop_images\/top_brand_img_sp_sol.jpg",
               "brand_logo": "shopify:\/\/shop_images\/logo_sol_b.svg",
               "description": "なめらかな口当たりを追求したジェラート"
@@ -158,6 +158,180 @@
         "block_order": [
           "other_brand_KKCkpr",
           "other_brand_kj4DEm"
+        ],
+        "settings": {}
+      },
+      "other-brands_bp02": {
+        "type": "other-brands_bp02",
+        "blocks": {
+          "other_brand_BWJUtH": {
+            "type": "other-brand",
+            "settings": {
+              "link_url": "shopify:\/\/pages\/hydeandaway",
+              "brand_image": "shopify:\/\/shop_images\/top_brand_img_sp_ha.jpg",
+              "brand_logo": "shopify:\/\/shop_images\/logo_ha_b.svg",
+              "description": "国産フルーツにこだわった”ハコタルト”"
+            }
+          },
+          "other_brand_UbDJYL": {
+            "type": "other-brand",
+            "settings": {
+              "link_url": "shopify:\/\/pages\/bake-adorn",
+              "brand_image": "shopify:\/\/shop_images\/top_brand_img_sp_ba.jpg",
+              "brand_logo": "shopify:\/\/shop_images\/logo_ba_b.svg",
+              "description": "憩いのひとときを彩るクッキー"
+            }
+          }
+        },
+        "block_order": [
+          "other_brand_BWJUtH",
+          "other_brand_UbDJYL"
+        ],
+        "settings": {}
+      },
+      "other-brands_bp03": {
+        "type": "other-brands_bp03",
+        "blocks": {
+          "other_brand_anHDQB": {
+            "type": "other-brand",
+            "settings": {
+              "link_url": "shopify:\/\/pages\/hydeandaway",
+              "brand_image": "shopify:\/\/shop_images\/top_brand_img_sp_ha.jpg",
+              "brand_logo": "shopify:\/\/shop_images\/logo_ha_b.svg",
+              "description": "国産フルーツにこだわった”ハコタルト”"
+            }
+          },
+          "other_brand_AkUgxe": {
+            "type": "other-brand",
+            "settings": {
+              "link_url": "shopify:\/\/pages\/gelato-solbella",
+              "brand_image": "shopify:\/\/shop_images\/top_brand_img_sp_sol.jpg",
+              "brand_logo": "shopify:\/\/shop_images\/logo_sol_b.svg",
+              "description": "なめらかな口当たりを追求したジェラート"
+            }
+          }
+        },
+        "block_order": [
+          "other_brand_anHDQB",
+          "other_brand_AkUgxe"
+        ],
+        "settings": {}
+      },
+      "shoplist": {
+        "type": "shoplist",
+        "blocks": {
+          "store_kaGkJk": {
+            "type": "store",
+            "settings": {
+              "store_name": "Hyde&Away 京都東山店",
+              "store_id": "higashiyama",
+              "image_1": "shopify:\/\/shop_images\/kyotohigashiyama_img_01.jpg",
+              "image_2": "shopify:\/\/shop_images\/kyotohigashiyama_img_02.jpg",
+              "image_3": "shopify:\/\/shop_images\/kyotohigashiyama_img_03.jpg",
+              "image_4": "shopify:\/\/shop_images\/kyotohigashiyama_img_04.jpg",
+              "image_5": "shopify:\/\/shop_images\/kyotohigashiyama_img_05.jpg",
+              "image_6": "shopify:\/\/shop_images\/kyotohigashiyama_img_06.jpg",
+              "postal_code": "〒605-0963",
+              "address": "京都府京都市東山区本瓦町672",
+              "phone": "090-2233-6958",
+              "business_hours": "11:00〜19:00",
+              "holiday": "なし",
+              "access": "<p>京阪本線七条駅1番口より徒歩14分<br\/>JR・京阪本線東福寺駅より徒歩15分<\/p>",
+              "parking": "<p>なし<br\/>（近隣のコインパーキングをご利用ください）<\/p>",
+              "map_url": "https:\/\/maps.app.goo.gl\/1HrJzYD88kgYKYRAA",
+              "map_embed": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3268.795527468457!2d135.77056441212488!3d34.98678607270612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60010f7d753f46c3%3A0x9d47af71104fb2af!2zSHlkZSZBd2F55Lqs6YO95p2x5bGx5bqX!5e0!3m2!1sja!2sjp!4v1736162223401!5m2!1sja!2sjp\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>"
+            }
+          },
+          "store_tcT6ph": {
+            "type": "store",
+            "settings": {
+              "store_name": "Hyde&Away 京都北野店",
+              "store_id": "kitano",
+              "image_1": "shopify:\/\/shop_images\/kyotokitano_img_01.jpg",
+              "image_2": "shopify:\/\/shop_images\/kyotokitano_img_02.jpg",
+              "image_3": "shopify:\/\/shop_images\/kyotokitano_img_03.jpg",
+              "image_4": "shopify:\/\/shop_images\/kyotokitano_img_04.jpg",
+              "image_5": "shopify:\/\/shop_images\/kyotokitano_img_05.jpg",
+              "image_6": "shopify:\/\/shop_images\/kyotokitano_img_06.jpg",
+              "postal_code": "602-8377",
+              "address": "京都府京都市上京区東竪町118-2 モリキビル 1F",
+              "phone": "080-2006-7924",
+              "business_hours": "11:00〜19:00",
+              "holiday": "なし",
+              "access": "<p>嵐電北野線北野白梅町駅より徒歩9分<\/p>",
+              "parking": "<p>なし<br\/>（近隣のコインパーキングをご利用ください）<\/p>",
+              "map_url": "https:\/\/maps.app.goo.gl\/NcGYXVxvbWz6kxnn9",
+              "map_embed": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3267.219848765475!2d135.7335935124535!3d35.026229572692394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600107c8d497e657%3A0xf6b8a348fe33ea06!2zSHlkZSZBd2F55Lqs6YO95YyX6YeO5bqX!5e0!3m2!1sja!2sjp!4v1736209230206!5m2!1sja!2sjp\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>"
+            }
+          },
+          "store_EXMWKr": {
+            "type": "store",
+            "settings": {
+              "store_name": "Hyde&Away 神戸三宮店",
+              "store_id": "sannomiya",
+              "image_1": "shopify:\/\/shop_images\/kobesannomiya_img_01.jpg",
+              "image_2": "shopify:\/\/shop_images\/kobesannomiya_img_02.jpg",
+              "image_3": "shopify:\/\/shop_images\/kobesannomiya_img_03.jpg",
+              "image_4": "shopify:\/\/shop_images\/kobesannomiya_img_04.jpg",
+              "postal_code": "650-0004",
+              "address": "兵庫県神戸市中央区中山手通1丁目27番地8",
+              "phone": "080-4023-4429",
+              "business_hours": "11:00〜19:00",
+              "holiday": "なし",
+              "access": "<p>神戸市営地下鉄三宮駅より徒歩5分<br\/>JR三ノ宮駅・阪急電鉄神戸三宮駅より徒歩6分<\/p>",
+              "parking": "<p>なし<br\/>（近隣のコインパーキングをご利用ください）<\/p>",
+              "map_url": "https:\/\/maps.app.goo.gl\/poztAxGiQ2rdmLoB6",
+              "map_embed": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3280.328996621424!2d135.18805791244333!3d34.696880972808295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60008f86c0b821d3%3A0x56936f63c1538955!2zSHlkZSZBd2F556We5oi45LiJ5a6u5bqX!5e0!3m2!1sja!2sjp!4v1736209477621!5m2!1sja!2sjp\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>"
+            }
+          },
+          "store_h8hfwT": {
+            "type": "store",
+            "settings": {
+              "store_name": "Hyde&Away 名古屋店",
+              "store_id": "nagoya",
+              "image_1": "shopify:\/\/shop_images\/nagoya_img_01.jpg",
+              "image_2": "shopify:\/\/shop_images\/nagoya_img_02.jpg",
+              "image_3": "shopify:\/\/shop_images\/nagoya_img_03.jpg",
+              "image_4": "shopify:\/\/shop_images\/nagoya_img_04.jpg",
+              "postal_code": "464-0075",
+              "address": "愛知県名古屋市千種区内山3丁目21-11 クルールクリート 2F",
+              "phone": "090-1714-4429",
+              "business_hours": "11:00〜19:00",
+              "holiday": "なし",
+              "access": "<p>JR・地下鉄千種駅より徒歩2分<\/p>",
+              "parking": "<p>なし<br\/>（近隣のコインパーキングをご利用ください）<\/p>",
+              "map_url": "https:\/\/maps.app.goo.gl\/M4gpvTXZMBwE3UCJ9",
+              "map_embed": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3261.407649443072!2d136.92989191245778!3d35.17139097264245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600371522712cfc5%3A0x11e3aaf120b0ff01!2zSHlkZSZBd2F55ZCN5Y-k5bGL5bqX!5e0!3m2!1sja!2sjp!4v1736209736545!5m2!1sja!2sjp\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>"
+            }
+          },
+          "store_dyBfqE": {
+            "type": "store",
+            "settings": {
+              "store_name": "Hyde&Away 大阪店",
+              "store_id": "osaka",
+              "image_1": "shopify:\/\/shop_images\/osaka_img_01.jpg",
+              "image_2": "shopify:\/\/shop_images\/osaka_img_02.jpg",
+              "image_3": "shopify:\/\/shop_images\/osaka_img_03.jpg",
+              "image_4": "shopify:\/\/shop_images\/osaka_img_04.jpg",
+              "image_5": "shopify:\/\/shop_images\/osaka_img_05.jpg",
+              "postal_code": "550-0015",
+              "address": "大阪府大阪市西区南堀江1丁目8-7",
+              "phone": "070-1730-4429",
+              "business_hours": "11:00〜20:00",
+              "holiday": "なし",
+              "access": "<p>地下鉄なんば駅より徒歩6~9分<\/p>",
+              "parking": "<p>なし<br\/>（近隣のコインパーキングをご利用ください）<\/p>",
+              "map_url": "https:\/\/maps.app.goo.gl\/HLh7LP5JTVr8HkDLA",
+              "map_embed": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3281.3753894039314!2d135.4932871124427!3d34.67047407281766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e7002df70127%3A0x464cd9f31ca89b1b!2zaHlkZSZhd2F55aSn6Ziq5bqX!5e0!3m2!1sja!2sjp!4v1736209969362!5m2!1sja!2sjp\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>"
+            }
+          }
+        },
+        "block_order": [
+          "store_kaGkJk",
+          "store_tcT6ph",
+          "store_EXMWKr",
+          "store_h8hfwT",
+          "store_dyBfqE"
         ],
         "settings": {}
       }

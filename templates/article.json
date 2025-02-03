@@ -18,7 +18,9 @@
         },
         "share": {
           "type": "share",
-          "settings": {}
+          "settings": {
+            "share_label": "Share"
+          }
         },
         "content": {
           "type": "content",
@@ -31,10 +33,16 @@
         "share",
         "content"
       ],
+      "disabled": true,
+      "settings": {}
+    },
+    "topic_detail_UGwy8G": {
+      "type": "topic-detail",
       "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "topic_detail_UGwy8G"
   ]
 }

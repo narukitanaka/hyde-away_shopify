@@ -217,6 +217,9 @@ input[type=button]:focus {
   align-items: center;
   gap: 28px;
 }
+.pagination_wrapper .pagination .pagination__list .pagination__item {
+  color: #fff !important;
+}
 .pagination_wrapper .pagination .pagination__list .pagination__item.pagination__item--current {
   text-decoration-line: underline;
   text-decoration-style: solid;
@@ -225,6 +228,9 @@ input[type=button]:focus {
   text-decoration-thickness: 8%; /* 1.28px */
   text-underline-offset: 53%; /* 8.48px */
   text-underline-position: from-font;
+}
+.pagination_wrapper .pagination .pagination__list .pagination__item.pagination__item--current::after {
+  display: none !important;
 }
 .pagination_wrapper .pagination .pagination__list .pagination__item.pagination__item-arrow img {
   width: 54px;
@@ -2895,6 +2901,14 @@ gelato SOLBELLAブランドページ
 }
 @media screen and (max-width: 599px) {
   .shop-page .sec-shop:first-child {
+    padding: 0 0 80px;
+  }
+}
+.shop-page .sec-shop:first-of-type {
+  padding: 0 0 100px;
+}
+@media screen and (max-width: 599px) {
+  .shop-page .sec-shop:first-of-type {
     padding: 0 0 80px;
   }
 }

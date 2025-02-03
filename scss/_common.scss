@@ -250,6 +250,7 @@ input[type="button"] {
       align-items: center;
       gap: 28px;
       .pagination__item {
+        color: #fff !important;
         &.pagination__item--current {
           text-decoration-line: underline;
           text-decoration-style: solid;
@@ -257,6 +258,9 @@ input[type="button"] {
           text-decoration-thickness: 8%; /* 1.28px */
           text-underline-offset: 53%; /* 8.48px */
           text-underline-position: from-font;
+          &::after {
+            display: none !important;
+          }
         }
         &.pagination__item-arrow {
           img {

@@ -1,0 +1,242 @@
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  {% for block in section.blocks %}
+    const {{ block.settings.store_id }}_thumb_swiper = new Swiper('.{{ block.settings.store_id }}_thumb_slider', {
+      slidesPerView: 6,
+      spaceBetween: 10,
+      watchSlidesProgress: true,
+      breakpoints: {
+        600: {
+          slidesPerView: 8,
+        }
+      },
+    });
+
+    const {{ block.settings.store_id }}_swiper = new Swiper('.{{ block.settings.store_id }}_slider', {
+      grabCursor: true,
+      slidesPerView: 1,
+      spaceBetween: 20,
+      watchSlidesProgress: true,
+      speed: 1000,
+      thumbs: {
+        swiper: {{ block.settings.store_id }}_thumb_swiper,
+      },
+    });
+  {% endfor %}
+});
+</script>
+
+
+{% for block in section.blocks %}
+  <section class="sec-shop" id="{{ block.settings.store_id }}" {{ block.shopify_attributes }}>
+    <h2 class="shop_name">
+      {{ block.settings.store_name }}
+    </h2>
+    <div class="slide_image_wrap">
+      <div class="main_swiper_wrap">
+        <div class="swiper img_slider {{ block.settings.store_id }}_slider">
+          <div class="swiper-wrapper">
+            {% for i in (1..6) %}
+              {% assign image_key = 'image_' | append: i %}
+              {% if block.settings[image_key] != blank %}
+                <div class="swiper-slide">
+                  <div class="item">
+                    <div class="image">
+                      {{ block.settings[image_key] | img_url: 'master' | img_tag }}
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="swiper thumb_slider {{ block.settings.store_id }}_thumb_slider">
+        <div class="swiper-wrapper">
+          {% for i in (1..6) %}
+            {% assign image_key = 'image_' | append: i %}
+            {% if block.settings[image_key] != blank %}
+              <div class="swiper-slide">
+                <div class="item">
+                  <div class="image">
+                    {{ block.settings[image_key] | img_url: '150x150', crop: 'center' | img_tag }}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="shop_info_wrap">
+      <div class="flex_wrap">
+        <div class="info">
+          <dl>
+            <div class="row_group">
+              <dt>住所</dt>
+              <dd>
+                <p>〒{{ block.settings.postal_code }}<br>{{ block.settings.address }}</p>
+                <a class="map_btn" href="{{ block.settings.map_url }}" target="_blank">
+                  <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/map_btn.svg" alt="">
+                </a>
+              </dd>
+            </div>
+            <div class="row_group">
+              <dt>電話番号</dt>
+              <dd>
+                <a href="tel:{{ block.settings.phone | remove: '-' }}">
+                  {{ block.settings.phone }}
+                </a>
+              </dd>
+            </div>
+            <div class="row_group">
+              <dt>営業時間</dt>
+              <dd>
+                <p>{{ block.settings.business_hours }}</p>
+              </dd>
+            </div>
+            <div class="row_group">
+              <dt>定休日</dt>
+              <dd>
+                <p>{{ block.settings.holiday }}</p>
+              </dd>
+            </div>
+            <div class="row_group">
+              <dt>アクセス</dt>
+              <dd>{{ block.settings.access }}</dd>
+            </div>
+            <div class="row_group">
+              <dt>駐車場</dt>
+              <dd>{{ block.settings.parking }}</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="map">
+          {{ block.settings.map_embed }}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endfor %}
+
+
+{% schema %}
+  {
+    "name": "店舗一覧",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "store",
+        "name": "店舗",
+        "settings": [
+          {
+            "type": "text",
+            "id": "store_name",
+            "label": "店舗名"
+          },
+          {
+            "type": "text",
+            "id": "store_id",
+            "label": "店舗ID（例：higashiyama）",
+            "info": "英数字の小文字のみ使用可能"
+          },
+          {
+            "type": "header",
+            "content": "店舗画像（最大6枚）"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_1",
+            "label": "店舗画像 1"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_2",
+            "label": "店舗画像 2"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_3",
+            "label": "店舗画像 3"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_4",
+            "label": "店舗画像 4"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_5",
+            "label": "店舗画像 5"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_6",
+            "label": "店舗画像 6"
+          },
+          {
+            "type": "header",
+            "content": "店舗情報"
+          },
+          {
+            "type": "text",
+            "id": "postal_code",
+            "label": "郵便番号"
+          },
+          {
+            "type": "text",
+            "id": "address",
+            "label": "住所"
+          },
+          {
+            "type": "text",
+            "id": "phone",
+            "label": "電話番号"
+          },
+          {
+            "type": "text",
+            "id": "business_hours",
+            "label": "営業時間"
+          },
+          {
+            "type": "text",
+            "id": "holiday",
+            "label": "定休日"
+          },
+          {
+            "type": "richtext",
+            "id": "access",
+            "label": "アクセス"
+          },
+          {
+            "type": "richtext",
+            "id": "parking",
+            "label": "駐車場"
+          },
+          {
+            "type": "url",
+            "id": "map_url",
+            "label": "Google Mapsリンク"
+          },
+          {
+            "type": "html",
+            "id": "map_embed",
+            "label": "Google Maps埋め込みコード"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+
+<script>
+  window.storeListData = [
+    {% for block in section.blocks %}
+      {
+        id: {{ block.settings.store_id | json }},
+        name: {{ block.settings.store_name | json }}
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
+</script>

@@ -25,6 +25,7 @@
               aria-label="{{ 'general.pagination.previous' | t }}"
             >
               {% render 'icon-caret' %}
+              {% comment %} <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/icon_arrow_r_w.svg" alt=""> {% endcomment %}
             </a>
           </li>
         {%- endif -%}
@@ -64,7 +65,8 @@
               class="pagination__item pagination__item--prev pagination__item-arrow link motion-reduce"
               aria-label="{{ 'general.pagination.next' | t }}"
             >
-              {%- render 'icon-caret' -%}
+              {% comment %} {%- render 'icon-caret' -%} {% endcomment %}
+              <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/icon_arrow_r_w.svg" alt="">
             </a>
           </li>
         {%- endif -%}

@@ -6,7 +6,7 @@
         "kv_brand_yx3Peq": {
           "type": "kv_brand",
           "settings": {
-            "link_url": "shopify:\/\/collections\/bake-adorn",
+            "link_url": "shopify:\/\/pages\/bake-adorn",
             "bg_image_pc": "shopify:\/\/shop_images\/top_kv_ba.jpg",
             "bg_image_sp": "shopify:\/\/shop_images\/top_kv_ba_sp.jpg",
             "brand_logo": "shopify:\/\/shop_images\/logo_ba_w.svg",
@@ -30,7 +30,7 @@
         "kv_brand_h9bHbr": {
           "type": "kv_brand",
           "settings": {
-            "link_url": "shopify:\/\/collections\/gelato-solbella",
+            "link_url": "shopify:\/\/pages\/gelato-solbella",
             "bg_image_pc": "shopify:\/\/shop_images\/top_kv_sol.jpg",
             "bg_image_sp": "shopify:\/\/shop_images\/top_kv_sol_sp.jpg",
             "brand_logo": "shopify:\/\/shop_images\/logo_sol_w.svg",
@@ -53,7 +53,7 @@
         "top_brand_item_tVnniY": {
           "type": "top-brandItem",
           "settings": {
-            "link_url": "shopify:\/\/collections",
+            "link_url": "shopify:\/\/pages\/hydeandaway",
             "image_pc": "shopify:\/\/shop_images\/top_brand_img_ha.jpg",
             "image_sp": "shopify:\/\/shop_images\/top_brand_img_sp_ha.jpg",
             "logo": "shopify:\/\/shop_images\/logo_ha_b.svg",
@@ -63,7 +63,7 @@
         "top_brand_item_YxwMB7": {
           "type": "top-brandItem",
           "settings": {
-            "link_url": "",
+            "link_url": "shopify:\/\/pages\/bake-adorn",
             "image_pc": "shopify:\/\/shop_images\/top_brand_img_ba.jpg",
             "image_sp": "shopify:\/\/shop_images\/top_brand_img_sp_ba.jpg",
             "logo": "shopify:\/\/shop_images\/logo_ba_b.svg",
@@ -73,7 +73,7 @@
         "top_brand_item_xUbpy3": {
           "type": "top-brandItem",
           "settings": {
-            "link_url": "",
+            "link_url": "shopify:\/\/pages\/gelato-solbella",
             "image_pc": "shopify:\/\/shop_images\/top_brand_img_sol.jpg",
             "image_sp": "shopify:\/\/shop_images\/top_brand_img_sp_sol.jpg",
             "logo": "shopify:\/\/shop_images\/logo_sol_b.svg",
