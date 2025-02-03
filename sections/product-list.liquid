@@ -1,0 +1,185 @@
+<!-- BEGIN sections: page-header -->
+<section class="page-header">
+  <h1 class="page-heading">
+    <span class="en">Products</span>
+    <span class="ja">商品一覧</span>
+  </h1>
+</section>
+<!-- END sections: page-header -->
+
+<!-- BEGIN sections: product -->
+<section class="sec-product">
+  <div class="l-inner">
+
+    {% if cart.attributes.pagination != blank %}
+      {%- assign limit = cart.attributes.pagination %}
+    {% else %}
+      {% assign limit = 30 -%}
+    {% endif %}
+    {% paginate collection.products by limit %}
+
+    <div class="contents_wrapper">
+      {% for product in collection.products %}
+        <div class="item">
+          <a href="{{ product.url }}" class="product_link">
+            <div class="image">
+              <img src="{{ product.featured_image.src | img_url: 'master' }}" alt="">
+            </div>
+            <div class="caption">
+              <span class="brand">
+                {% comment %} BAKE ADORN {% endcomment %}
+                {% assign collection_titles = '' %}
+                {% for collection in product.collections %}
+                  {% unless collection.handle == 'reducedtax' or collection.handle == 'all' or collection.handle == 'frontpage' %}
+                    {% if collection_titles != '' %}
+                      {% assign collection_titles = collection_titles | append: ' / ' %}
+                    {% endif %}
+                    {% assign collection_titles = collection_titles | append: collection.title %}
+                  {% endunless %}
+                {% endfor %}
+                {% if collection_titles != '' %}
+                  {{ collection_titles }}
+                {% endif %}
+              </span>
+              <span class="product_name">{{ product.title }}</span>
+              <span class="price">
+                <span class="num">{{ product.price | money_with_currency }}</span><span class="tax">（税込）</span>
+              </span>
+            </div>
+          </a>
+          <div class="cart_btn">
+            <button type="submit" name="add" class="add-to-cart-btn product-form__submit button button--full-width button--primary" data-variant-id="{{ product.variants.first.id }}">
+              <span>カートに追加する</span>
+              <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/icon_arrow_w.svg" alt="">
+            </button>
+          </div>
+        </div>
+      {% endfor %}
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+          addToCartButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+              var variantId = this.getAttribute('data-variant-id');
+              var quantity = 1; 
+              fetch('/cart/add.js', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  items: [{
+                    id: variantId,
+                    quantity: quantity
+                  }]
+                })
+              })
+              .then(response => response.json())
+              .then(data => {
+                console.log('商品がカートに追加されました', data);
+                alert('商品がカートに追加されました！');
+              })
+              .catch(error => {
+                console.error('カートへの追加に失敗しました。', error);
+                alert('カートへの追加に失敗しました。');
+              });
+            });
+          });
+        });
+      </script>
+    </div>
+
+    <div class="pagination_wrapper">
+      {% if paginate.pages > 1 %}
+        {% render "pagination", paginate: paginate %}
+      {% endif %}
+    </div>
+
+    {% endpaginate %}
+  </div>
+</section>
+<!-- END sections: product -->
+
+<!-- BEGIN sections: brand_link -->
+<section class="sec-brand_link">
+  <div class="l-inner">
+    <h2 class="brand_link-heading">
+      <span class="en">Brand</span>
+      <span class="ja">ブランド</span>
+    </h2>
+    <ul class="brand_list">
+      <li>
+        <a href="/pages/hydeandaway/">
+          <div class="image">
+            <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/top_brand_img_sp_ha.jpg" alt="">
+          </div>
+          <div class="text">
+            <div class="logo">
+              <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/logo_ha_b.svg" alt="">
+            </div>
+            <p>
+              国産フルーツにこだわった”ハコタルト”
+            </p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/pages/bake-adorn/">
+          <div class="image">
+            <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/top_brand_img_sp_ba.jpg" alt="">
+          </div>
+          <div class="text">
+            <div class="logo">
+              <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/logo_ba_b.svg" alt="">
+            </div>
+            <p>
+              憩いのひとときを彩るクッキー
+            </p>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/pages/gelato-solbella/">
+          <div class="image">
+            <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/top_brand_img_sp_sol.jpg" alt="">
+          </div>
+          <div class="text">
+            <div class="logo">
+              <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/logo_sol_b.svg" alt="">
+            </div>
+            <p>
+              なめらかな口当たりを追求したジェラート
+            </p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- END sections: brand_link -->
+
+<!-- BEGIN sections: breadcrumbs -->
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="{{ routes.root_url }}">
+        <span>home</span>
+      </a>
+    </li>
+    <li>
+      <span>Products</span>
+    </li>
+  </ol>
+</div>
+<!-- END sections: breadcrumbs -->
+
+{% schema %}
+  {
+    "name": "product-list",
+    "presets": [
+      {
+        "name": "product-list"
+      }
+    ]
+  }
+{% endschema %}
