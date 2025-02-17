@@ -669,6 +669,9 @@ header
   width: 100%;
   background: #3C210E url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_brown.png") repeat left top/cover;
 }
+.header.bg-img_none {
+  background-image: none;
+}
 .header .header_inner {
   width: 100%;
   height: 81px;
@@ -974,6 +977,9 @@ header
     width: 60px;
   }
 }
+.top-page .header.is-scrolled {
+  position: fixed;
+}
 .top-page .header.is-scrolled .header_inner {
   background: #3C210E url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_brown.png") repeat left top/cover;
 }
@@ -984,6 +990,10 @@ header
   .top-page .header.is-scrolled .header_inner .header_logo {
     width: 60px;
   }
+}
+
+#cart-icon-bubble .cart-count-bubble {
+  display: none;
 }
 
 /*************************************************
@@ -3232,8 +3242,31 @@ gelato SOLBELLAブランドページ
 }
 
 /*************************************************
-商品一覧ページ
+商品詳細
 *************************************************/
+.sec-product.recommend {
+  padding-bottom: 4rem;
+}
+.sec-product.recommend span {
+  color: #3c210e;
+}
+.sec-product.recommend .page-header {
+  margin: 8rem 0 6rem;
+}
+.sec-product.recommend .page-header h2 .en {
+  line-height: 1.2;
+}
+.sec-product.recommend .contents_wrapper {
+  margin-top: 0;
+}
+.sec-product.recommend .cart_btn button {
+  border: 1px solid #241408;
+  background: url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/btn_deco_b.svg") no-repeat center/cover;
+}
+.sec-product.recommend .price .tax {
+  vertical-align: sub;
+}
+
 /*************************************************
 ギフトについて
 *************************************************/
@@ -3632,6 +3665,11 @@ gelato SOLBELLAブランドページ
 /*************************************************
 お問い合わせページ
 *************************************************/
+.contact-page {
+  /*************************************************
+  お問い合わせ　-送信後
+  *************************************************/
+}
 .contact-page .sec-contact .contents_wrapper .form_text {
   margin: 80px 0 50px;
   text-align: center;
@@ -3645,7 +3683,7 @@ gelato SOLBELLAブランドページ
   }
 }
 .contact-page .sec-contact .contents_wrapper .form_text a {
-  color: #DBCFC5;
+  color: #dbcfc5;
   text-decoration-line: underline;
   text-decoration-style: solid;
   -webkit-text-decoration-skip: ink;
@@ -3691,19 +3729,19 @@ gelato SOLBELLAブランドページ
   content: "必須";
   display: inline-block;
   padding: 1px 8px;
-  background-color: #DBCFC5;
+  background-color: #dbcfc5;
   color: #3C210E;
   font-size: 1.2rem;
 }
 .contact-page .sec-contact .contents_wrapper #ContactForm .field .field__input {
   display: block;
   border-radius: 2px;
-  box-shadow: 0 0 0 1px #DBCFC5 inset;
+  box-shadow: 0 0 0 1px #dbcfc5 inset;
   width: 100%;
   padding: 13px 20px;
 }
 .contact-page .sec-contact .contents_wrapper #ContactForm .field .field__input:focus {
-  box-shadow: 0 0 0 3px #DBCFC5 inset;
+  box-shadow: 0 0 0 3px #dbcfc5 inset;
 }
 .contact-page .sec-contact .contents_wrapper #ContactForm .field .field__select {
   position: relative;
@@ -3717,23 +3755,26 @@ gelato SOLBELLAブランドページ
   right: 30px;
   width: 8px;
   height: 8px;
-  border-top: 1px solid #DBCFC5;
-  border-right: 1px solid #DBCFC5;
+  border-top: 1px solid #dbcfc5;
+  border-right: 1px solid #dbcfc5;
   transform: rotate(135deg);
   pointer-events: none;
 }
 .contact-page .sec-contact .contents_wrapper #ContactForm .field .field__select select {
   display: block;
   border-radius: 2px;
-  box-shadow: 0 0 0 1px #DBCFC5 inset;
+  box-shadow: 0 0 0 1px #dbcfc5 inset;
   width: 100%;
   padding: 13px 20px;
+}
+.contact-page .sec-contact .contents_wrapper #ContactForm .field .field__select select option {
+  color: #000;
 }
 .contact-page .sec-contact .contents_wrapper #ContactForm .field .field__select select::-ms-expand {
   display: none;
 }
 .contact-page .sec-contact .contents_wrapper #ContactForm .field .field__select select:focus {
-  box-shadow: 0 0 0 2px #DBCFC5 inset;
+  box-shadow: 0 0 0 2px #dbcfc5 inset;
 }
 .contact-page .sec-contact .contents_wrapper #ContactForm .field p {
   text-align: center;
@@ -3745,7 +3786,7 @@ gelato SOLBELLAブランドページ
   }
 }
 .contact-page .sec-contact .contents_wrapper #ContactForm .field p a {
-  color: #DBCFC5;
+  color: #dbcfc5;
   text-decoration: underline;
   transition: all 0.3s;
 }
@@ -3775,7 +3816,63 @@ gelato SOLBELLAブランドページ
   transform: translate(0, 3px);
 }
 .contact-page .sec-contact .contents_wrapper #ContactForm .contact__button .button:focus {
-  box-shadow: 0 0 0 4px #013F89 inset;
+  box-shadow: 0 0 0 4px #013f89 inset;
+}
+.contact-page .form-success-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #428445 !important;
+  margin-bottom: 4rem;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+@media screen and (max-width: 599px) {
+  .contact-page .form-success-title {
+    font-size: 14px !important;
+    text-align: left !important;
+  }
+}
+.contact-page .form-success-title svg {
+  width: 2rem;
+}
+@media screen and (max-width: 599px) {
+  .contact-page .form-success-title svg {
+    width: 5rem;
+  }
+}
+.contact-page .form-error-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+@media screen and (max-width: 599px) {
+  .contact-page .form-error-title {
+    font-size: 14px !important;
+  }
+}
+.contact-page .form-error-title svg {
+  width: 2rem;
+}
+.contact-page .form-error-text {
+  display: block;
+  font-size: 16px !important;
+  text-align: center;
+  color: #dd0000;
+  margin-bottom: 4rem;
+  position: sticky;
+}
+@media screen and (max-width: 599px) {
+  .contact-page .form-error-text {
+    font-size: 14px !important;
+  }
 }
 
 /*************************************************

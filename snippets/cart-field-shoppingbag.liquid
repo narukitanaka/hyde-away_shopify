@@ -1,0 +1,12 @@
+<div class="cart-custom-field field-derively-time">
+  <p>
+    手提げ袋の有無<br>
+    <span>※１商品につき１枚無料</span><br>
+    <span>※サイズ：H24×W22×D14(cm)</span>
+  </p>
+  <select id="" name="attributes[手提げ袋]" required>
+    <option value="" select>選択する</option>
+    <option value="なし"{% if cart.attributes["手提げ袋"] == "あり" %} selected{% endif %}>あり</option>
+    <option value="なし"{% if cart.attributes["手提げ袋"] == "なし" %} selected{% endif %}>なし</option>
+  </select>
+</div>

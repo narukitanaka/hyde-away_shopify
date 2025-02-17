@@ -1,11 +1,34 @@
-@use "variable"as v;
-@use "common"as c;
+@use "variable" as v;
+@use "common" as c;
 /*************************************************
-商品一覧ページ
+商品詳細
 *************************************************/
-
-// .products-page {
-//     .pagination_wrapper {
-//         margin: 100px auto 180px;
-//     }
-// }
+.sec-product.recommend {
+  padding-bottom: 4rem;
+  span {
+    color: #3c210e;
+  }
+  .page-header {
+    margin: 8rem 0 6rem;
+    h2 {
+      .en {
+        line-height: 1.2;
+      }
+    }
+  }
+  .contents_wrapper {
+    margin-top: 0;
+  }
+  .cart_btn {
+    button {
+      border: 1px solid #241408;
+      background: url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/btn_deco_b.svg")
+        no-repeat center / cover;
+    }
+  }
+  .price {
+    .tax {
+      vertical-align: sub;
+    }
+  }
+}

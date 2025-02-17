@@ -1,0 +1,147 @@
+/* デフォルトテーマのカスタム */
+@media screen and (min-width: 990px) {
+  .product--stacked .product__media-item {
+    max-width: calc(20% - var(--grid-desktop-horizontal-spacing) / 5);
+  }
+}
+@media screen and (min-width: 750px) {
+  .product-media-modal__content {
+    max-width: 100rem;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 750px) {
+  .product-media-modal__toggle {
+    top: 10.2rem !important;
+  }
+}
+.product__info-container .cate {
+  font-size: 1.4rem;
+}
+.product__info-container .product__title {
+  margin-top: 0;
+}
+.product__info-container .product__title h1 {
+  font-size: 2.4rem;
+}
+.product .price__container {
+  margin-bottom: 6rem !important;
+}
+@media only screen and (max-width: 768px) {
+  .product .price__container {
+    margin-bottom: 3rem !important;
+  }
+}
+.product__info-container .price-item {
+  font-size: 2.4rem !important;
+}
+.product__info-container .price-item span {
+  font-size: 1.4rem;
+}
+.product__text {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.product-form__submit {
+  border-radius: 0;
+}
+.product-form__submit:hover {
+  transform: none !important;
+}
+.product-form__submit:hover::after {
+  box-shadow: none !important;
+}
+.product__text a {
+  text-decoration: underline;
+}
+.product__text a:hover {
+  color: #ffffffbf;
+}
+.product-info_ttl {
+  font-size: 2rem;
+  font-weight: 700;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid #6c5545;
+  margin: 1.5rem 0;
+}
+.product-info_ttl:first-of-type {
+  margin-top: 5rem;
+}
+table.item-infomation {
+  table-layout: fixed;
+  width: 100%;
+}
+table.item-infomation th {
+  width: 25%;
+}
+table.item-infomation th,
+table.item-infomation td {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  padding-bottom: 1rem;
+}
+.related-products__heading_en {
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 500;
+  color: #3c210e;
+}
+.related-products__heading {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 8rem !important;
+}
+.related-products .grid__item .card__information {
+  padding-top: 0.5rem;
+}
+.related-products .grid__item .card__heading {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+.related-products .grid__item .cate {
+  font-size: 1.2rem;
+}
+.related-products .grid__item .price-item span {
+  font-size: 1.2rem;
+}
+
+.cart-custom-field {
+  max-width: 36rem;
+  margin: 0 0 2rem auto;
+  &.field-derively-date {
+    margin-top: 2rem;
+  }
+  p {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    span {
+      font-size: 1.3rem;
+      font-weight: 400;
+    }
+  }
+  input,
+  select {
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #1c0702;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    padding: 0.8rem 1.5rem;
+  }
+  input::placeholder {
+    color: #1c0702;
+    font-weight: 500;
+  }
+}
+#ui-datepicker-div {
+  min-width: 25rem;
+}
+.ui-datepicker-unselectable span {
+  font-size: 1.7rem;
+  line-height: 1.7;
+  letter-spacing: 1px;
+}

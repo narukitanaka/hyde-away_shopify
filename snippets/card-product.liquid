@@ -23,10 +23,96 @@
 {%- unless skip_styles -%}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
-
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
   {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
+  <style>
+    .card-wrapper .card__content {
+      display: flex;
+      flex-direction: column;
+    }
+    .card-wrapper .product-link {
+      position: relative;
+      z-index: 1;
+    }
+    .card-wrapper .quick-add {
+      position: relative;
+      z-index: 2;
+      margin-top: 0.5rem;
+    }
+    .card-wrapper .quick-add__submit {
+      margin-top: 0.5rem;
+    }
+  </style>
+
+  <script>
+  class ProductForm extends HTMLElement {
+    constructor() {
+      super();
+      this.form = this.querySelector('form');
+      this.button = this.querySelector('button[type="button"]');
+      this.spinner = this.querySelector('.loading-spinner');
+      
+      if (this.button) {
+        this.button.addEventListener('click', this.onSubmit.bind(this));
+      }
+    }
+
+    async onSubmit(evt) {
+      evt.preventDefault();
+      if (this.button.hasAttribute('disabled')) return;
+
+      this.button.setAttribute('disabled', '');
+      this.spinner.classList.remove('hidden');
+
+      const config = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          items: [{
+            id: this.querySelector('input[name="id"]').value,
+            quantity: 1
+          }],
+          sections: ['cart-icon-bubble']
+        })
+      };
+
+      try {
+        const response = await fetch(window.Shopify.routes.root + 'cart/add.js', config);
+        const data = await response.json();
+
+        if (data.status) {
+          console.error('Error:', data.description);
+          alert('エラーが発生しました。もう一度お試しください。');
+        } else {
+          alert('商品がカートに追加されました！');
+          // カートの内容を更新する処理をここに追加できます
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('エラーが発生しました。もう一度お試しください。');
+      } finally {
+        this.button.removeAttribute('disabled');
+        this.spinner.classList.add('hidden');
+      }
+    }
+  }
+
+  customElements.define('product-form', ProductForm);
+</script>
+
+<style>
+  .loading-spinner {
+    pointer-events: none;
+  }
+  .loading-spinner.hidden {
+    display: none;
+  }
+</style>
+
 {%- endunless -%}
 {%- if card_product and card_product != empty -%}
   {%- liquid
@@ -145,21 +231,35 @@
       </div>
       <div class="card__content">
         <div class="card__information">
-          <h3
-            class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
-            {% if card_product.featured_media or settings.card_style == 'card' %}
-              id="title-{{ section_id }}-{{ card_product.id }}"
-            {% endif %}
-          >
-            <a
-              href="{{ card_product.url }}"
-              id="CardLink-{{ section_id }}-{{ card_product.id }}"
-              class="full-unstyled-link"
-              aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
+          {% assign collection_titles = '' %}
+          {% for collection in product.collections %}
+            {% unless collection.handle == 'reducedtax' or collection.handle == 'all' or collection.handle == 'frontpage' %}
+              {% if collection_titles != '' %}
+                {% assign collection_titles = collection_titles | append: ' / ' %}
+              {% endif %}
+              {% assign collection_titles = collection_titles | append: collection.title %}
+            {% endunless %}
+          {% endfor %}
+          {% if collection_titles != '' %}
+            <p class="cate">{{ collection_titles }}</p>
+          {% endif %}
+          <div class="product-link">
+            <h3
+              class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
+              {% if card_product.featured_media or settings.card_style == 'card' %}
+                id="title-{{ section_id }}-{{ card_product.id }}"
+              {% endif %}
             >
-              {{ card_product.title | escape }}
-            </a>
-          </h3>
+              <a
+                href="{{ card_product.url }}"
+                id="CardLink-{{ section_id }}-{{ card_product.id }}"
+                class="full-unstyled-link"
+                aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
+              >
+                {{ card_product.title | escape }}
+              </a>
+            </h3>
+          </div>
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>

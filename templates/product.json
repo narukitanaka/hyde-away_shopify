@@ -3,12 +3,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "disabled": true,
+        "custom_liquid_argtqf": {
+          "type": "custom_liquid",
           "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
+            "custom_liquid": "{% assign collection_titles = '' %}\n{% for collection in product.collections %}\n  {% unless collection.handle == 'reducedtax' or collection.handle == 'all' or collection.handle == 'frontpage' %}\n    {% if collection_titles != '' %}\n      {% assign collection_titles = collection_titles | append: ' \/ ' %}\n    {% endif %}\n    {% assign collection_titles = collection_titles | append: collection.title %}\n  {% endunless %}\n{% endfor %}\n{% if collection_titles != '' %}\n  <p class=\"cate\">{{ collection_titles }}<\/p>\n{% endif %}"
           }
         },
         "title": {
@@ -19,14 +17,10 @@
           "type": "price",
           "settings": {}
         },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
         "variant-picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button",
+            "picker_type": "dropdown",
             "swatch_shape": "circle"
           }
         },
@@ -37,113 +31,100 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "text_HMMHdL": {
+          "type": "text",
+          "settings": {
+            "text": "手提げ・のし・包装のオプションはカート画面で選択ください。",
+            "text_style": "body"
+          }
+        },
+        "text_TxGiNw": {
+          "type": "text",
+          "settings": {
+            "text": "<a href=\"\/pages\/guide\" title=\"ご利用ガイド\">ご利用ガイド（送料／返品／お支払い方法について）<\/a>",
+            "text_style": "body"
           }
         },
         "product-inventory": {
           "type": "inventory",
+          "disabled": true,
           "settings": {
             "text_style": "body",
             "inventory_threshold": 10,
             "show_inventory_quantity": true
           }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "custom_liquid_GA9FUh": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<p class=\"product-info_ttl\">製品詳細<\/p>\n<table class=\"item-infomation\">\n  <tr>\n    {% if product.metafields.custom._contents != blank %}\n      <th>内容量<\/th>\n      <td>{{ product.metafields.custom._contents }}<\/td>\n    {% endif %}\n  <\/tr>\n  <tr>\n    {% if product.metafields.custom._materials != blank %}\n    <th>原材料名<\/th>\n    <td>{{ product.metafields.custom._materials }}<\/td>\n    {% endif %}\n  <\/tr>\n  <tr>\n    {% if product.metafields.custom._expiration_date != blank %}\n      <th>賞味期限<\/th>\n      <td>{{ product.metafields.custom._expiration_date }}<\/td>\n    {% endif %}\n  <\/tr>\n  <tr>\n    {% if product.metafields.custom._howtosave != blank %}\n      <th>保存方法<\/th>\n      <td>{{ product.metafields.custom._howtosave }}<\/td>\n    {% endif %}\n  <\/tr>\n  <tr>\n    {% if product.metafields.custom._howtouse != blank %}\n    <th>使用方法<\/th>\n    <td>{{ product.metafields.custom._howtouse }}<\/td>\n    {% endif %}\n  <\/tr>\n  <tr>\n    {% if product.metafields.custom._allergen != blank %}\n      <th>アレルゲン<\/th>\n      <td>{{ product.metafields.custom._allergen }}<\/td>\n    {% endif %}\n  <\/tr>\n<\/table>"
+          }
         }
       },
       "block_order": [
-        "vendor",
+        "custom_liquid_argtqf",
         "title",
         "price",
-        "description",
         "variant-picker",
         "quantity-selector",
         "buy_buttons",
-        "product-inventory"
+        "text_HMMHdL",
+        "text_TxGiNw",
+        "product-inventory",
+        "description",
+        "custom_liquid_GA9FUh"
       ],
       "settings": {
         "enable_sticky_info": true,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-96780821-3b97-4961-aade-b067e4cf2aa0",
         "media_size": "medium",
         "constrain_to_viewport": true,
-        "media_fit": "contain",
+        "media_fit": "cover",
         "gallery_layout": "stacked",
         "media_position": "left",
         "image_zoom": "lightbox",
         "mobile_thumbnails": "show",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "collapsible-content": {
-      "type": "collapsible-content",
-      "blocks": {
-        "collapsible-row-0": {
-          "type": "collapsible_row",
-          "settings": {
-            "icon": "none",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-1": {
-          "type": "collapsible_row",
-          "settings": {
-            "icon": "none",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-2": {
-          "type": "collapsible_row",
-          "settings": {
-            "icon": "none",
-            "row_content": "",
-            "page": ""
-          }
-        }
-      },
-      "block_order": [
-        "collapsible-row-0",
-        "collapsible-row-1",
-        "collapsible-row-2"
-      ],
-      "settings": {
-        "caption": "",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "layout": "section",
-        "color_scheme": "scheme-1",
-        "container_color_scheme": "scheme-1",
-        "open_first_collapsible_row": true,
-        "image_ratio": "adapt",
-        "desktop_layout": "image_second",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 100,
+        "padding_bottom": 80
       }
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
+        "heading": "あなたにおすすめの商品",
         "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
+        "products_to_show": 6,
+        "columns_desktop": 3,
         "color_scheme": "scheme-1",
-        "image_ratio": "square",
+        "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 28
+        "padding_top": 0,
+        "padding_bottom": 100
       }
+    },
+    "recommend_product_gy8UkA": {
+      "type": "recommend-product",
+      "settings": {}
     }
   },
   "order": [
     "main",
-    "collapsible-content",
-    "related-products"
+    "related-products",
+    "recommend_product_gy8UkA"
   ]
 }

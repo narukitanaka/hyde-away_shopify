@@ -1,0 +1,115 @@
+{% assign recommend_item = product.metafields.custom._recommend %}
+{%-  if recommend_item != blank -%}
+<!-- BEGIN sections: recommend -->
+<section class="sec-product recommend">
+  <div class="l-inner">
+    <div class="page-header">
+      <div class="page-heading">
+        <h2>
+          <span class="en">Recommend</span>
+          <span class="ja">あなたにおすすめの商品</span>
+        </h2>
+      </div>
+    </div>
+    <div class="contents_wrapper">
+      {%- for product in recommend_item.value  -%}
+        <div class="item">
+          <a href="{{ product.url }}" class="product_link">
+            <div class="image">
+              <img src="{{ product.featured_image.src | img_url: 'master' }}" alt="">
+            </div>
+            <div class="caption">
+              <span class="brand">
+                {% comment %} BAKE ADORN {% endcomment %}
+                {% assign collection_titles = '' %}
+                {% for collection in product.collections %}
+                  {% unless collection.handle == 'reducedtax' or collection.handle == 'all' or collection.handle == 'frontpage' %}
+                    {% if collection_titles != '' %}
+                      {% assign collection_titles = collection_titles | append: ' / ' %}
+                    {% endif %}
+                    {% assign collection_titles = collection_titles | append: collection.title %}
+                  {% endunless %}
+                {% endfor %}
+                {% if collection_titles != '' %}
+                  {{ collection_titles }}
+                {% endif %}
+              </span>
+              <span class="product_name">{{ product.title }}</span>
+              <span class="price">
+                <span class="num">{{ product.price | money_with_currency }}</span><span class="tax">（税込）</span>
+              </span>
+            </div>
+          </a>
+          <div class="cart_btn">
+            <button type="submit" name="add" class="add-to-cart-btn product-form__submit button button--full-width button--primary" data-variant-id="{{ product.variants.first.id }}">
+              <span>カートに追加する</span>
+              <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/icon_arrow_b.svg" alt="">
+            </button>
+          </div>
+        </div>
+      {% endfor %}
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+          addToCartButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+              var variantId = this.getAttribute('data-variant-id');
+              var quantity = 1; 
+              fetch('/cart/add.js', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  items: [{
+                    id: variantId,
+                    quantity: quantity
+                  }]
+                })
+              })
+              .then(response => response.json())
+              .then(data => {
+                console.log('商品がカートに追加されました', data);
+                alert('商品がカートに追加されました！');
+              })
+              .catch(error => {
+                console.error('カートへの追加に失敗しました。', error);
+                alert('カートへの追加に失敗しました。');
+              });
+            });
+          });
+        });
+      </script>
+    </div>
+
+  </div>
+</section>
+<!-- END sections: product -->
+{%- endif -%}
+
+
+<!-- BEGIN sections: breadcrumbs -->
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="{{ routes.root_url }}">
+        <span>home</span>
+      </a>
+    </li>
+    <li>
+      <span>{{ product.title }}</span>
+    </li>
+  </ol>
+</div>
+<!-- END sections: breadcrumbs -->
+
+{% schema %}
+  {
+    "name": "recommend-product",
+    "presets": [
+      {
+        "name": "recommend-product"
+      }
+    ]
+  }
+{% endschema %}

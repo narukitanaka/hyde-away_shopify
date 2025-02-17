@@ -14,6 +14,9 @@ header
   background: v.$brown
     url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_brown.png")
     repeat left top / cover;
+  &.bg-img_none {
+    background-image: none;
+  }
   .header_inner {
     width: 100%;
     height: 81px;
@@ -344,6 +347,7 @@ header
       }
     }
     &.is-scrolled {
+      position: fixed;
       .header_inner {
         background: v.$brown
           url("https://cdn.shopify.com/s/files/1/0749/1823/2300/files/bg_brown.png")
@@ -356,5 +360,11 @@ header
         }
       }
     }
+  }
+}
+
+#cart-icon-bubble {
+  .cart-count-bubble {
+    display: none;
   }
 }

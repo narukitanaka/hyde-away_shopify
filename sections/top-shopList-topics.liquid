@@ -9,7 +9,7 @@
         {%- for block in section.blocks -%}
           {%- if block.type == 'top-shopItem' -%}
             <li {{ block.shopify_attributes }}>
-              <a href="shop-list.html#{{ block.settings.anchor }}">
+              <a href="/pages/shoplist#{{ block.settings.anchor }}">
                 <div class="image">
                   {%- if block.settings.shop_image -%}
                     <img src="{{ block.settings.shop_image | image_url }}" alt="{{ block.settings.shop_name }}">
@@ -36,7 +36,7 @@
     </div>
 
     <div class="more_btn">
-      <a href="pages/shoplist/">
+      <a href="/pages/shoplist/">
         <span>View All</span>
       </a>
     </div>

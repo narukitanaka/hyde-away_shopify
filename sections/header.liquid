@@ -1,4 +1,4 @@
-<header class="header" id="js-header">
+<header class="header {% if template.name == 'product' or template.name == 'cart' or template.name == 'search' or template.name == 'account' or template.name == 'addresses' or template.name == 'login' or template.name == 'order' or template.name == 'register' %}bg-img_none{% endif %}" id="js-header">
   <div class="header_inner">
     <!-- navi part -->
     <nav class="g_nav">
@@ -10,32 +10,32 @@
           <div class="submenu_wrap">
             <div class="submenu big_menu">
               <div class="big_menu_inner">
-                <ul>
-                  <li>
-                    <a href="/pages/hydeandaway/">
-                      <figure>
-                        <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/top_brand_img_sp_ha.jpg" alt="Hyde&Away">
-                      </figure>
-                      <p>Hyde&Away</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/pages/bake-adorn/">
-                      <figure>
-                        <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/top_brand_img_sp_ba.jpg" alt="BAKE ADORN">
-                      </figure>
-                      <p>BAKE ADORN</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/pages/gelato-solbella/">
-                      <figure>
-                        <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/top_brand_img_sp_sol.jpg" alt="gelato SOLBELLA">
-                      </figure>
-                      <p>gelato SOLBELLA</p>
-                    </a>
-                  </li>
-                </ul>
+                {% if linklists.menu_brand != blank %}
+                  <ul>
+                    {% for link in linklists.menu_brand.links %}
+                      <li>
+                        <a href="{{ link.url }}">
+                          <figure>
+                            {% assign handle = link.url | split: '/' | last %}
+                            
+                            {% if link.url contains '/collections/' %}
+                              {% assign collection = collections[handle] %}
+                              {% if collection.image %}
+                                <img src="{{ collection.image | img_url: 'master' }}" alt="{{ link.title }}">
+                              {% endif %}
+                            {% else %}
+                              {% assign page = pages[handle] %}
+                              {% if page.metafields.custom._thumbnail %}
+                                <img src="{{ page.metafields.custom._thumbnail | img_url: 'master' }}" alt="{{ link.title }}">
+                              {% endif %}
+                            {% endif %}
+                          </figure>
+                          <p>{{ link.title }}</p>
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
               </div>
             </div>
           </div>
@@ -52,10 +52,10 @@
             <div class="submenu_wrap">
               <div class="submenu mini_menu">
                 <ul class="under_link_list">
-                  <li><a href="guide.html">ご利用ガイド</a></li>
+                  <li><a href="/pages/guide/">ご利用ガイド</a></li>
                   <!-- <li><a href="gift.html">ギフトについて</a></li> -->
-                  <li><a href="faq.html">よくあるご質問</a></li>
-                  <li><a href="contact.html">お問い合わせ</a></li>
+                  <li><a href="/pages/faq/">よくあるご質問</a></li>
+                  <li><a href="/pages/contact-form/">お問い合わせ</a></li>
                 </ul>
               </div>
             </div>
@@ -74,43 +74,43 @@
           </p>
           <div class="big_menu">
             <div class="big_menu_inner">
-              <ul>
-                <li>
-                  <a href="/pages/hydeandaway/" class="nav_item_link">
-                    <figure>
-                      <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/top_brand_img_sp_ha.jpg" alt="Hyde&Away">
-                    </figure>
-                    <p>Hyde&Away</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="bake-adorn.html" class="nav_item_link">
-                    <figure>
-                      <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/top_brand_img_sp_ba.jpg" alt="BAKE ADORN">
-                    </figure>
-                    <p>BAKE ADORN</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="gelato-solbella.html" class="nav_item_link">
-                    <figure>
-                      <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/top_brand_img_sp_sol.jpg" alt="gelato SOLBELLA">
-                    </figure>
-                    <p>gelato SOLBELLA</p>
-                  </a>
-                </li>
-              </ul>
+              {% if linklists.menu_brand != blank %}
+                <ul>
+                  {% for link in linklists.menu_brand.links %}
+                    <li>
+                      <a href="{{ link.url }}" class="nav_item_link">
+                        <figure>
+                          {% assign handle = link.url | split: '/' | last %}
+                          
+                          {% if link.url contains '/collections/' %}
+                            {% assign collection = collections[handle] %}
+                            {% if collection.image %}
+                              <img src="{{ collection.image | img_url: 'master' }}" alt="{{ link.title }}">
+                            {% endif %}
+                          {% else %}
+                            {% assign page = pages[handle] %}
+                            {% if page.metafields.custom._thumbnail %}
+                              <img src="{{ page.metafields.custom._thumbnail | img_url: 'master' }}" alt="{{ link.title }}">
+                            {% endif %}
+                          {% endif %}
+                        </figure>
+                        <p>{{ link.title }}</p>
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
             </div>
           </div>
         </li>
         <li>
-          <a href="/shoplist/" class="nav_item_link">
+          <a href="/pages/shoplist/" class="nav_item_link">
             Shop List
             <span class="ja">店舗一覧</span>
           </a>
         </li>
         <li>
-          <a href="topics.html" class="nav_item_link">
+          <a href="/blogs/news/" class="nav_item_link">
             Topics
             <span class="ja">最新情報</span>
           </a>
@@ -123,9 +123,9 @@
             </p>
             <div class="mini_menu">
               <ul>
-                <li><a href="guide.html" class="nav_item_link">ご利用ガイド</a></li>
-                <li><a href="faq.html" class="nav_item_link">よくあるご質問</a></li>
-                <li><a href="contact.html" class="nav_item_link">お問い合わせ</a></li>
+                <li><a href="/pages/guide/" class="nav_item_link">ご利用ガイド</a></li>
+                <li><a href="/pages/faq/" class="nav_item_link">よくあるご質問</a></li>
+                <li><a href="/pages/contact-form/" class="nav_item_link">お問い合わせ</a></li>
               </ul>
             </div>
           </div>
@@ -145,7 +145,7 @@
     <!-- account & cart btn part -->
     <div class="header_btn_area">
       <div class="btn_wrap account_btn">
-        <a href="#">
+        <a href="/account/">
           <span class="icon">
             <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/icon_account.svg" alt="">
           </span>
@@ -153,8 +153,8 @@
         </a>
       </div>
       <div class="btn_wrap cart_btn">
-        <a href="#">
-          <span class="icon">
+        <a href="/cart/" class="header_cart-btn">
+          <span class="icon" id="cart-icon-bubble">
             <img src="https://cdn.shopify.com/s/files/1/0749/1823/2300/files/icon_cart.svg" alt="">
           </span>
           <span class="btn_name">Cart</span>

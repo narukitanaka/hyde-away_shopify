@@ -29,15 +29,21 @@
   <div class="page-width">
     <div class="title-wrapper-with-link">
       <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
-      <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
+      {% comment %} <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
+        {{- 'general.continue_shopping' | t -}}
+      </a> {% endcomment %}
+      <a href="{{ routes.root_url }}" class="button">
         {{- 'general.continue_shopping' | t -}}
       </a>
     </div>
 
     <div class="cart__warnings">
       <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
-      <a href="{{ routes.all_products_collection_url }}" class="button">
+      {% comment %} <a href="{{ routes.all_products_collection_url }}" class="button">
         {{ 'general.continue_shopping' | t }}
+      </a> {% endcomment %}
+      <a href="{{ routes.root_url }}" class="button">
+        {{- 'general.continue_shopping' | t -}}
       </a>
 
       {%- if shop.customer_accounts_enabled and customer == null -%}
@@ -447,6 +453,9 @@
       >
         {{ 'accessibility.loading' | t }}
       </p>
+      {% render 'cart-field-date' %}
+      {% render 'cart-field-time' %}
+      {% render 'cart-field-shoppingbag' %}
     </form>
   </div>
 </cart-items>

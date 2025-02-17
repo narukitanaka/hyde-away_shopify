@@ -254,6 +254,21 @@
 
     {% if template.name == 'product' or template.name == 'cart' or template.name == 'search' or template.name == 'account' or template.name == 'addresses' or template.name == 'login' or template.name == 'order' or template.name == 'register' %}
       {{ 'base.css' | asset_url | stylesheet_tag }}
+      {{ 'custom.css' | asset_url | stylesheet_tag }}
+      {% style %}
+        main {
+          padding-top: 4rem;
+        }
+      {% endstyle %}
+    {% endif %}
+
+    {% if template.name == 'cart' or template.name == 'search' or template.name == 'account' or template.name == 'addresses' or template.name == 'login' or template.name == 'order' or template.name == 'register' %}
+      {% style %}
+        main {
+          padding: 10rem 0 20rem;
+          background-color: #3c210e;
+        }
+      {% endstyle %}
     {% endif %}
 
     {{ 'reset.css' | asset_url | stylesheet_tag }}
@@ -308,7 +323,9 @@
       {% if template == 'page.solbella' %}brand-page sol-page{% endif %}
       {% if template == 'page.bakeadorn' %}brand-page ba-page{% endif %}
       {% if template == 'page.shoplist' %}shop-page{% endif %}
-      {% if template == 'blog' %}info-page{% endif %}
+      {% if template == 'page.guide' %}guide-page{% endif %}
+      {% if template == 'page.contact-form' %}contact-page{% endif %}
+      {% if template == 'blog' or template == 'page.faq' or template == 'page.policy' or template == 'page.legal' or template == 'page.company' %}info-page{% endif %}
       {% if template == 'article' %}topics-detail-page{% endif %}
     ">
       {% comment %} <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -359,11 +376,44 @@
           </script>
       {% endif %}
 
-      <main id="MainContent" class="{% if template == 'page.shoplist' %}contents_wrapper{% endif %} content-for-layout focus-none" role="main" tabindex="-1">
+      {% if template == 'page.guide' %}
+        <!-- BEGIN sections: page-header -->
+        <section class="page-header">
+          <h1 class="page-heading">
+            <span class="en">Shopping Guide</span>
+            <span class="ja">ご利用ガイド</span>
+          </h1>
+        </section>
+        <!-- END sections: page-header -->
+
+        <div class="column-wrapper l-inner">
+          <!-- BEGIN aside: sidebar -->
+          <aside class="sidebar">
+            <div class="sidebar_inner">
+              <ul class="link_list">
+                <li>
+                  <a href="#payment">お支払い方法について</a>
+                </li>
+                <li>
+                  <a href="#delivery">送料・配送について</a>
+                </li>
+                <!-- <li>
+                  <a href="#gift">ギフトサービスについて</a>
+                </li> -->
+                <li>
+                  <a href="#cancel-policy">返品・交換について</a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          <!-- END aside: sidebar -->
+      {% endif %}
+
+      <main id="MainContent" class="{% if template == 'page.shoplist' or template == 'page.guide' %}contents_wrapper{% endif %} content-for-layout focus-none" role="main" tabindex="-1">
         {{ content_for_layout }}
       </main>
 
-      {% if template == 'page.shoplist' %}
+      {% if template == 'page.shoplist' or template == 'page.guide' %}
         </div>
         <!-- BEGIN sections: breadcrumbs -->
         <div class="breadcrumbs">
@@ -374,7 +424,12 @@
               </a>
             </li>
             <li>
-              <span>Shop List</span>
+              {% if template == 'page.shoplist' %}
+                <span>Shop List</span>
+              {% endif %}
+              {% if template == 'page.guide' %}
+                <span>ご利用ガイド</span>
+              {% endif %}
             </li>
           </ol>
         </div>
